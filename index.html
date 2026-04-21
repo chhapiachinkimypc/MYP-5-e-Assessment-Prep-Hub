@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MYP 5 e-Assessment Prep Hub | Pathways School Noida</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#F2EFE9;--card:#FFFFFF;--navy:#1A2744;--navy-light:#243358;
+  --gold:#D4891A;--gold-light:#F5A623;--text:#1A2744;--text-muted:#6B7A99;
+  --border:#E0DAD0;--shadow:0 2px 12px rgba(26,39,68,.08);
+  --shadow-lg:0 8px 32px rgba(26,39,68,.14);--radius:12px;
+  --transition:.25s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+.site-header{background:var(--navy);color:#fff;padding:0 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(0,0,0,.3);height:64px}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-icon{width:36px;height:36px;background:var(--gold);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#fff}
+.logo-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:#fff;line-height:1.2}
+.logo-sub{font-size:.7rem;color:rgba(255,255,255,.6);font-weight:500}
+.badge{background:var(--gold);color:#fff;padding:4px 12px;border-radius:20px;font-size:.72rem;font-weight:700;letter-spacing:.05em}
+.app-layout{display:flex;min-height:calc(100vh - 64px)}
+.sidebar{width:230px;min-width:230px;background:var(--navy-light);padding:16px 0;position:sticky;top:64px;height:calc(100vh - 64px);overflow-y:auto;flex-shrink:0;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.15) transparent}
+.sidebar-section-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);padding:12px 20px 6px}
+.nav-btn{display:flex;align-items:center;gap:10px;width:100%;padding:9px 20px;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.65);font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:600;text-align:left;transition:var(--transition);border-left:3px solid transparent}
+.nav-btn:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-btn.active{background:rgba(255,255,255,.1);color:#fff;border-left-color:var(--gold-light)}
+.nav-dot{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+.nav-label{flex:1}
+.nav-sub{font-size:.6rem;color:rgba(255,255,255,.38);font-weight:500;display:block;margin-top:1px;letter-spacing:.02em}
+.main-content{flex:1;padding:32px;overflow-y:auto;max-width:calc(100vw - 230px)}
+.subject-page{display:none;animation:fadeIn .3s ease}
+.subject-page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.page-hero{border-radius:var(--radius);padding:28px 32px;margin-bottom:24px;color:#fff;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:rgba(0,0,0,.15)}
+.page-hero>*{position:relative;z-index:1}
+.hero-type{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.75;margin-bottom:6px}
+.page-hero h2{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;line-height:1.2;margin-bottom:10px}
+.hero-meta{display:flex;gap:10px;flex-wrap:wrap}
+.hero-chip{background:rgba(255,255,255,.18);backdrop-filter:blur(8px);padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700}
+.section-tabs{display:flex;gap:4px;margin-bottom:22px;border-bottom:2px solid var(--border);overflow-x:auto}
+.section-tab{padding:10px 18px;background:none;border:none;cursor:pointer;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:700;color:var(--text-muted);transition:var(--transition);border-bottom:2px solid transparent;margin-bottom:-2px;white-space:nowrap;border-radius:8px 8px 0 0}
+.section-tab:hover{color:var(--navy);background:rgba(26,39,68,.04)}
+.section-tab.active{color:var(--gold);border-bottom-color:var(--gold)}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;margin-bottom:18px}
+.card-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.criteria-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:16px}
+.criterion-card{border-radius:10px;padding:16px 18px;border-left:4px solid}
+.crit-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px;opacity:.7}
+.crit-name{font-weight:700;font-size:.92rem;margin-bottom:4px}
+.crit-marks{font-size:.8rem;font-weight:600;opacity:.8;margin-bottom:6px}
+.crit-desc{font-size:.78rem;color:var(--text-muted);line-height:1.5}
+.bp-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:10px}
+.bp-table th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-size:.74rem;font-weight:700;letter-spacing:.05em}
+.bp-table th:first-child{border-radius:8px 0 0 0}
+.bp-table th:last-child{border-radius:0 8px 0 0}
+.bp-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.bp-table tr:last-child td{border-bottom:none}
+.bp-table .total-row td{background:rgba(212,137,26,.08);font-weight:700}
+.bp-table tr:hover td{background:rgba(212,137,26,.04)}
+.topic-list{list-style:none}
+.topic-list li{padding:7px 12px;font-size:.82rem;display:flex;align-items:flex-start;gap:8px;border-bottom:1px solid var(--border)}
+.topic-list li:last-child{border-bottom:none}
+.topic-list li::before{content:'◆';color:var(--gold);font-size:.5rem;margin-top:6px;flex-shrink:0}
+.ct-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.ct-table th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-size:.74rem;font-weight:700;letter-spacing:.06em}
+.ct-table th:first-child{border-radius:8px 0 0 0}
+.ct-table th:last-child{border-radius:0 8px 0 0}
+.ct-table td{padding:9px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+.ct-table tr:last-child td{border-bottom:none}
+.ct-table tr:hover td{background:rgba(212,137,26,.04)}
+.level-pill{display:inline-block;padding:2px 8px;border-radius:12px;font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.l1{background:#DCFCE7;color:#166534}
+.l2{background:#FEF9C3;color:#92400E}
+.l3{background:#FEE2E2;color:#991B1B}
+.q-card{border:1.5px solid var(--border);border-radius:10px;padding:18px 20px;margin-bottom:14px;background:linear-gradient(135deg,#fff 0%,#fafaf8 100%);transition:var(--transition)}
+.q-card:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(212,137,26,.1)}
+.q-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px}
+.q-meta{display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0}
+.q-tag{padding:3px 10px;border-radius:12px;font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.q-body{font-size:.87rem;line-height:1.65;color:var(--text);font-weight:600}
+.q-hint{margin-top:10px;padding:10px 14px;background:linear-gradient(135deg,#FEF9C3,#FFF7ED);border-radius:8px;border-left:3px solid var(--gold);font-size:.78rem;color:#78350F}
+.q-hint strong{display:block;margin-bottom:2px}
+.q-answer{margin-top:10px;padding:10px 14px;background:#F0FDF4;border-radius:8px;border-left:3px solid #22C55E;font-size:.78rem;color:#166534;display:none}
+.toggle-answer{margin-top:10px;font-size:.75rem;font-weight:700;color:var(--gold);background:none;border:none;cursor:pointer;text-decoration:underline;padding:0}
+.tips-list{list-style:none}
+.tips-list li{padding:12px 16px;margin-bottom:10px;border-radius:10px;border-left:4px solid;font-size:.83rem;line-height:1.5;display:flex;gap:10px;align-items:flex-start}
+.tip-icon{font-size:1rem;flex-shrink:0;margin-top:2px}
+.do-dont-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.do-block{background:#F0FDF4;border-radius:10px;padding:16px;border-top:4px solid #22C55E}
+.dont-block{background:#FEF2F2;border-radius:10px;padding:16px;border-top:4px solid #EF4444}
+.do-block h4{color:#166534;font-size:.82rem;font-weight:800;margin-bottom:10px;letter-spacing:.05em;text-transform:uppercase}
+.dont-block h4{color:#991B1B;font-size:.82rem;font-weight:800;margin-bottom:10px;letter-spacing:.05em;text-transform:uppercase}
+.do-block ul,.dont-block ul{list-style:none}
+.do-block li,.dont-block li{font-size:.78rem;padding:5px 0;display:flex;gap:8px;align-items:flex-start;border-bottom:1px solid rgba(0,0,0,.06);line-height:1.45}
+.do-block li:last-child,.dont-block li:last-child{border-bottom:none}
+.do-block li::before{content:'✔';color:#22C55E;font-weight:700;flex-shrink:0}
+.dont-block li::before{content:'✘';color:#EF4444;font-weight:700;flex-shrink:0}
+.template-box{background:linear-gradient(135deg,#EFF6FF,#EEF2FF);border:1.5px solid #C7D2FE;border-radius:10px;padding:16px 20px;margin-bottom:14px;font-size:.82rem}
+.template-box h4{font-weight:800;color:#3730A3;margin-bottom:10px;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase}
+.template-row{display:grid;grid-template-columns:130px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid rgba(99,102,241,.12);font-size:.78rem}
+.template-row:last-child{border-bottom:none}
+.template-row .label{font-weight:700;color:#4338CA}
+.template-row .val{color:#1E1B4B}
+.essay-guide{background:linear-gradient(135deg,#FDF4FF,#FAF5FF);border-radius:var(--radius);border:1.5px solid #E9D5FF;overflow:hidden;margin-bottom:18px}
+.essay-guide-header{background:linear-gradient(135deg,#6D28D9,#8B5CF6);color:#fff;padding:16px 22px}
+.essay-guide-header h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700}
+.essay-guide-header p{font-size:.78rem;opacity:.8;margin-top:4px}
+.essay-para{display:flex;gap:0;border-bottom:1px solid #E9D5FF}
+.essay-para:last-child{border-bottom:none}
+.essay-para-num{background:linear-gradient(135deg,#7C3AED,#6D28D9);color:#fff;padding:16px 18px;font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;min-width:100px;display:flex;align-items:flex-start;justify-content:center;flex-shrink:0}
+.essay-para-content{padding:14px 18px;flex:1}
+.essay-para-content h4{font-weight:800;font-size:.85rem;color:#4C1D95;margin-bottom:6px}
+.essay-para-content ul{list-style:none}
+.essay-para-content li{font-size:.8rem;padding:3px 0;display:flex;gap:8px;align-items:flex-start;line-height:1.45}
+.essay-para-content li::before{content:'→';color:#7C3AED;flex-shrink:0;font-weight:700}
+.idu-link-card{background:linear-gradient(135deg,var(--navy),#2D3F6B);color:#fff;border-radius:var(--radius);padding:22px 28px;margin-bottom:18px;display:flex;align-items:center;gap:20px}
+.idu-link-card .idu-icon{font-size:2.5rem}
+.idu-link-card h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:4px}
+.idu-link-card p{font-size:.82rem;opacity:.75;margin-bottom:12px}
+.idu-link-card a{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#fff;padding:8px 18px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.82rem;transition:var(--transition)}
+.idu-link-card a:hover{background:var(--gold-light);transform:translateY(-1px)}
+.callout{border-radius:10px;padding:13px 18px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start;font-size:.82rem;line-height:1.55}
+.callout-icon{font-size:1.1rem;flex-shrink:0}
+.callout-info{background:#EFF6FF;border:1px solid #BFDBFE;color:#1E40AF}
+.callout-warn{background:#FFFBEB;border:1px solid #FDE68A;color:#92400E}
+.callout-tip{background:#F0FDF4;border:1px solid #BBF7D0;color:#166534}
+.scroll-toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:10px 20px 10px 16px;border-radius:30px;display:flex;align-items:center;gap:10px;font-family:'Nunito',sans-serif;font-size:.82rem;font-weight:700;box-shadow:0 4px 24px rgba(26,39,68,.35);opacity:0;pointer-events:none;transition:opacity .35s ease,transform .35s ease;z-index:999;white-space:nowrap}
+.scroll-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.scroll-toast .toast-arrow{width:26px;height:26px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;animation:bounce-down .9s ease infinite;flex-shrink:0}
+@keyframes bounce-down{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.section-panel{display:none}
+.section-panel.active{display:block}
+.band-table{width:100%;border-collapse:collapse;font-size:.79rem;margin-bottom:12px}
+.band-table th{background:var(--navy);color:#fff;padding:8px 12px;font-size:.72rem;font-weight:700;text-align:center}
+.band-table th:first-child{border-radius:8px 0 0 0;text-align:left}
+.band-table th:last-child{border-radius:0 8px 0 0}
+.band-table td{padding:8px 12px;border-bottom:1px solid var(--border);text-align:center}
+.band-table td:first-child{text-align:left;font-weight:600}
+.band-table tr:last-child td{border-bottom:none}
+.band-high{background:#F0FDF4;color:#15803D;font-weight:700}
+/* OPVL Table */
+.opvl-table{width:100%;border-collapse:collapse;font-size:.79rem;margin-top:10px}
+.opvl-table th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-size:.74rem;font-weight:700;letter-spacing:.05em}
+.opvl-table th:first-child{border-radius:8px 0 0 0}
+.opvl-table th:last-child{border-radius:0 8px 0 0}
+.opvl-table td{padding:10px 14px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+.opvl-table tr:last-child td{border-bottom:none}
+.opvl-table tr:hover td{background:rgba(212,137,26,.03)}
+.opvl-section-header{background:linear-gradient(135deg,#1A2744,#243358);color:#fff;padding:10px 14px;font-weight:800;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:900px){
+  .sidebar{width:60px;min-width:60px}
+  .nav-btn .nav-label,.sidebar-section-label{display:none}
+  .nav-btn{padding:12px;justify-content:center}
+  .main-content{max-width:calc(100vw - 60px)}
+  .grid-2,.criteria-grid,.do-dont-grid{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .essay-para-num{min-width:60px;padding:14px 10px;font-size:.95rem}
+}
+@media(max-width:600px){
+  .main-content{padding:16px}
+  .page-hero{padding:20px}
+  .grid-3{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="scroll-toast" id="scrollToast">
+  <div class="toast-arrow">↓</div>
+  <span>Content loaded — scroll down to explore</span>
+</div>
+
+<header class="site-header">
+  <div class="logo">
+    <div class="logo-icon">IB</div>
+    <div>
+      <div class="logo-title">MYP 5 e-Assessment Prep Hub</div>
+      <div class="logo-sub">Pathways School Noida · Grade 10 Onscreen Examinations 2025–26</div>
+    </div>
+  </div>
+  <span class="badge">Official Blueprint</span>
+</header>
+
+<div class="app-layout">
+<nav class="sidebar">
+  <div class="sidebar-section-label">Start Here</div>
+  <button class="nav-btn active" onclick="showSubject('home',this)"><span class="nav-dot" style="background:var(--gold)">🏠</span><span class="nav-label">Exam Strategy<span class="nav-sub">↓ scroll to read</span></span></button>
+  <div class="sidebar-section-label">Mathematics</div>
+  <button class="nav-btn" onclick="showSubject('math-std',this)"><span class="nav-dot" style="background:#3B82F6">📐</span><span class="nav-label">Standard Math<span class="nav-sub">↓ scroll to read</span></span></button>
+  <button class="nav-btn" onclick="showSubject('math-ext',this)"><span class="nav-dot" style="background:#8B5CF6">∑</span><span class="nav-label">Extended Math<span class="nav-sub">↓ scroll to read</span></span></button>
+  <div class="sidebar-section-label">Languages</div>
+  <button class="nav-btn" onclick="showSubject('english',this)"><span class="nav-dot" style="background:#EC4899">📖</span><span class="nav-label">English L&amp;L<span class="nav-sub">↓ scroll to read</span></span></button>
+  <button class="nav-btn" onclick="showSubject('french',this)"><span class="nav-dot" style="background:#10B981">🇫🇷</span><span class="nav-label">French<span class="nav-sub">↓ scroll to read</span></span></button>
+  <button class="nav-btn" onclick="showSubject('spanish',this)"><span class="nav-dot" style="background:#F59E0B">🇪🇸</span><span class="nav-label">Spanish<span class="nav-sub">↓ scroll to read</span></span></button>
+  <button class="nav-btn" onclick="showSubject('hindi',this)"><span class="nav-dot" style="background:#EF4444">🇮🇳</span><span class="nav-label">Hindi<span class="nav-sub">↓ scroll to read</span></span></button>
+  <div class="sidebar-section-label">Sciences</div>
+  <button class="nav-btn" onclick="showSubject('physics',this)"><span class="nav-dot" style="background:#0EA5E9">⚛️</span><span class="nav-label">Physics<span class="nav-sub">↓ scroll to read</span></span></button>
+  <button class="nav-btn" onclick="showSubject('chemistry',this)"><span class="nav-dot" style="background:#F97316">🧪</span><span class="nav-label">Chemistry<span class="nav-sub">↓ scroll to read</span></span></button>
+  <button class="nav-btn" onclick="showSubject('biology',this)"><span class="nav-dot" style="background:#22C55E">🌿</span><span class="nav-label">Biology<span class="nav-sub">↓ scroll to read</span></span></button>
+  <div class="sidebar-section-label">Individuals &amp; Societies</div>
+  <button class="nav-btn" onclick="showSubject('inthumans',this)"><span class="nav-dot" style="background:#84CC16">🌍</span><span class="nav-label">Integrated Hum.<span class="nav-sub">↓ scroll to read</span></span></button>
+  <button class="nav-btn" onclick="showSubject('geography',this)"><span class="nav-dot" style="background:#14B8A6">🗺️</span><span class="nav-label">Geography<span class="nav-sub">↓ scroll to read</span></span></button>
+  <button class="nav-btn" onclick="showSubject('history',this)"><span class="nav-dot" style="background:#A78BFA">📜</span><span class="nav-label">History<span class="nav-sub">↓ scroll to read</span></span></button>
+  <div class="sidebar-section-label">Interdisciplinary</div>
+  <button class="nav-btn" onclick="showSubject('idu',this)"><span class="nav-dot" style="background:#6366F1">🔗</span><span class="nav-label">IDU<span class="nav-sub">↓ scroll to read</span></span></button>
+</nav>
+
+<main class="main-content" id="mainContent">
+
+<!-- ══════════════════════════ HOME ══════════════════════════ -->
+<div class="subject-page active" id="page-home">
+  <div class="page-hero" style="background:linear-gradient(135deg,#1A2744,#2D3F6B,#3D5494)">
+    <div class="hero-type">MYP 5 · Pathways School Noida · 2025–26</div>
+    <h2>Exam Strategy Hub</h2>
+    <div class="hero-meta">
+      <span class="hero-chip">⏱ 2-Hour Paper Plan</span>
+      <span class="hero-chip">📋 All Subjects</span>
+      <span class="hero-chip">🎯 Time-Blocked Guides</span>
+    </div>
+  </div>
+  <div class="card" style="border-top:4px solid var(--gold)">
+    <div class="card-title" style="font-size:1.15rem">🗺️ General Exam Plan — All Subjects (2-Hour Paper)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px">
+      <div style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:10px;padding:16px;border-left:4px solid #3B82F6">
+        <div style="font-size:.7rem;font-weight:800;color:#1D4ED8;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">⏱ Reading / Planning Time · 5–7 min</div>
+        <div style="font-size:.82rem;color:#1E3A8A;line-height:1.6">Scan the whole paper quickly — <strong>do not write yet.</strong> Mark:<br>
+        <span style="display:block;margin-top:6px;padding-left:8px;border-left:2px solid #3B82F6">⭐ <strong>Easy wins</strong></span>
+        <span style="display:block;padding-left:8px;border-left:2px solid #3B82F6">🔴 <strong>High-mark questions</strong></span>
+        <span style="display:block;padding-left:8px;border-left:2px solid #3B82F6">🚩 <strong>Unsure questions</strong></span></div>
+      </div>
+      <div style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7);border-radius:10px;padding:16px;border-left:4px solid #22C55E">
+        <div style="font-size:.7rem;font-weight:800;color:#15803D;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">📋 Planned Order</div>
+        <div style="font-size:.82rem;color:#14532D;line-height:1.7">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="background:#22C55E;color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;flex-shrink:0">1</span><span><strong>Easy wins</strong></span></div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px"><span style="background:#F59E0B;color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;flex-shrink:0">2</span><span><strong>Heavy lifting</strong></span></div>
+          <div style="display:flex;align-items:center;gap:8px"><span style="background:#EF4444;color:#fff;border-radius:50%;width:20px;height:20px;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:800;flex-shrink:0">3</span><span><strong>Last 15–20 min</strong> — review</span></div>
+        </div>
+      </div>
+      <div style="background:linear-gradient(135deg,#FFF7ED,#FEF3C7);border-radius:10px;padding:16px;border-left:4px solid #F59E0B">
+        <div style="font-size:.7rem;font-weight:800;color:#B45309;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px">⚡ Common Rules</div>
+        <ul style="list-style:none;font-size:.8rem;color:#78350F;line-height:1.7">
+          <li style="display:flex;gap:6px;align-items:flex-start"><span>⏱</span><span><strong>1 mark ≈ 1 minute</strong></span></li>
+          <li style="display:flex;gap:6px;align-items:flex-start"><span>🚩</span><span>Stuck? Flag it and <strong>move on</strong></span></li>
+          <li style="display:flex;gap:6px;align-items:flex-start"><span>🔍</span><span>Last 15–20 min: check <strong>every question</strong></span></li>
+          <li style="display:flex;gap:6px;align-items:flex-start"><span>✅</span><span>Check units, labels, command terms</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="callout callout-info"><span class="callout-icon">ℹ️</span><div>Select any subject from the sidebar for detailed blueprints, topic lists, command terms and exam tips.</div></div>
+</div>
+
+<!-- ══════════════════════════ STANDARD MATH ══════════════════════════ -->
+<div class="subject-page" id="page-math-std">
+  <div class="page-hero" style="background:linear-gradient(135deg,#1D4ED8,#3B82F6,#60A5FA)">
+    <div class="hero-type">Mathematics</div>
+    <h2>Standard Mathematics</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks</span><span class="hero-chip">🔢 Total: 100 marks</span><span class="hero-chip">A=25 · B=25 · C=25 · D=25</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('math-std','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('math-std','topics',this)">📚 Topics</button><button class="section-tab" onclick="showSection('math-std','cmdterms',this)">🔑 Command Terms</button><button class="section-tab" onclick="showSection('math-std','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="math-std-blueprint">
+    <div class="callout callout-warn"><span class="callout-icon">⚠️</span><div>Criterion C (Communicating) is assessed across ALL questions and totals 25 marks.</div></div>
+    <div class="card"><div class="card-title">📊 Exam Paper Pattern — 8 Questions</div>
+    <table class="bp-table"><thead><tr><th>Questions</th><th>Criteria</th><th>Notes</th></tr></thead><tbody>
+      <tr><td><strong>Q 1–5</strong></td><td>A and C</td><td>Knowing &amp; Understanding + Communicating</td></tr>
+      <tr><td><strong>Q 6</strong></td><td>C and D</td><td>Short response — real-life context</td></tr>
+      <tr><td><strong>Q 7</strong></td><td>C and D</td><td>Extended response — evaluate and justify mathematical models</td></tr>
+      <tr><td><strong>Q 8</strong></td><td>B and C</td><td>Investigating Patterns — scaffolded</td></tr>
+      <tr class="total-row"><td><strong>Total 100 marks</strong></td><td>A+B+C+D</td><td>A=25 · B=25 · C=25 · D=25</td></tr>
+    </tbody></table></div>
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#EFF6FF;border-color:#3B82F6"><div class="crit-label">Criterion A</div><div class="crit-name">Knowing and Understanding</div><div class="crit-marks">25 marks · Q1–5</div><div class="crit-desc">Select and apply mathematical facts, concepts and techniques.</div></div>
+      <div class="criterion-card" style="background:#FAF5FF;border-color:#8B5CF6"><div class="crit-label">Criterion B</div><div class="crit-name">Investigating Patterns</div><div class="crit-marks">25 marks · Q8</div><div class="crit-desc">Discover, describe and generalise patterns. Scaffolded for accessibility.</div></div>
+      <div class="criterion-card" style="background:#ECFDF5;border-color:#10B981"><div class="crit-label">Criterion C</div><div class="crit-name">Communicating</div><div class="crit-marks">25 marks · All tasks</div><div class="crit-desc">Use correct notation, show working, organise information using mathematical language.</div></div>
+      <div class="criterion-card" style="background:#FFF7ED;border-color:#F97316"><div class="crit-label">Criterion D</div><div class="crit-name">Applying Maths in Real-Life Contexts</div><div class="crit-marks">25 marks · Q6–7</div><div class="crit-desc">Connected to the global context. Evaluate and justify mathematical models.</div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="math-std-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">🔢 Unit 1 — Numbers &amp; Abstract Reasoning</div><ul class="topic-list"><li>Number system notations; basic operations on rational numbers</li><li>Laws of Exponents; Standard Form; Surds</li><li>Absolute values; inequalities (compound and double)</li><li>Sets and Venn Diagrams (up to 3 sets)</li><li>Time zones, clock and timetables</li></ul></div>
+      <div class="card"><div class="card-title">📈 Unit 2 — Coordinate Geometry</div><ul class="topic-list"><li>Cartesian plane; distance formula; midpoint formula</li><li>Equation of a line: y = mx + c; parallel and perpendicular lines</li><li>Solving linear equations; simultaneous equations</li><li>Direct and indirect variation</li></ul></div>
+      <div class="card"><div class="card-title">🔡 Unit 3 — Linear &amp; Quadratic Functions</div><ul class="topic-list"><li>Binomial expansion; factorisation</li><li>Solving quadratic equations (4 methods)</li><li>Quadratic functions in standard, vertex and intercept form</li></ul></div>
+      <div class="card"><div class="card-title">🔢 Unit 4 — Sequences</div><ul class="topic-list"><li>Arithmetic, Geometric, Quadratic sequences</li><li>Fibonacci, triangular and other sequences</li><li>Find, justify and prove general rules</li></ul></div>
+      <div class="card"><div class="card-title">📐 Unit 5+6 — Mensuration &amp; Geometry</div><ul class="topic-list"><li>Area, perimeter, surface area, volume</li><li>Circle properties; congruence and similarity</li></ul></div>
+      <div class="card"><div class="card-title">📊 Unit 7+8 — Transformations &amp; Statistics</div><ul class="topic-list"><li>Transformations; bearings; trigonometry</li><li>Mean, median, mode; cumulative frequency; IQR; box plots</li><li>Scatter plots; correlation; probability</li></ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="math-std-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>Definition</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>Write down / State</strong></td><td>Brief answer; little or no calculation required.</td><td><span class="level-pill l1">Basic</span></td></tr>
+      <tr><td><strong>Calculate</strong></td><td>Obtain a numerical answer showing relevant stages of working.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Solve</strong></td><td>Obtain the answer using algebraic/numerical/graphical methods.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Sketch</strong></td><td>Represent by diagram/graph with relevant features labelled.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Show</strong></td><td>Give all steps in a calculation or derivation.</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Justify / Prove</strong></td><td>Give valid reasons/logical steps to obtain the required result.</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="section-panel" id="math-std-tips">
+    <ul class="tips-list">
+      <li style="border-color:#3B82F6"><span class="tip-icon">✍️</span><div><strong>Criterion C runs through every question.</strong> Show ALL steps. Use proper notation. Disorganised or missing working loses Criterion C marks.</div></li>
+      <li style="border-color:#8B5CF6"><span class="tip-icon">🔍</span><div><strong>"Hence" means you MUST use the previous result.</strong> Starting from scratch scores 0 for method.</div></li>
+      <li style="border-color:#10B981"><span class="tip-icon">📏</span><div><strong>Always include units</strong> and round to the degree of accuracy specified in the question.</div></li>
+      <li style="border-color:#6366F1"><span class="tip-icon">🔢</span><div><strong>Q8 (Criterion B) is scaffolded.</strong> Follow parts in order — early parts guide you to the pattern.</div></li>
+      <li style="border-color:#0EA5E9"><span class="tip-icon">📝</span><div><strong>Describing a Pattern:</strong> Write a complete sentence — e.g. <em>"It is a quadratic progression with a 2nd common difference of 2, starting with 3."</em></div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════ EXTENDED MATH ══════════════════════════ -->
+<div class="subject-page" id="page-math-ext">
+  <div class="page-hero" style="background:linear-gradient(135deg,#4C1D95,#7C3AED,#A78BFA)">
+    <div class="hero-type">Mathematics</div>
+    <h2>Extended Mathematics</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks</span><span class="hero-chip">🔢 Total: 100 marks</span><span class="hero-chip">A=25 · B=25 · C=25 · D=25</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('math-ext','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('math-ext','topics',this)">📚 Topics</button><button class="section-tab" onclick="showSection('math-ext','cmdterms',this)">🔑 Command Terms</button><button class="section-tab" onclick="showSection('math-ext','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="math-ext-blueprint">
+    <div class="callout callout-info"><span class="callout-icon">ℹ️</span><div>Same 8-question structure as Standard but with harder content — logarithms, trigonometric functions, networks, rational/cubic functions, standard deviation.</div></div>
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#FAF5FF;border-color:#7C3AED"><div class="crit-label">Criterion A</div><div class="crit-name">Knowing and Understanding</div><div class="crit-marks">25 marks · Q1–5</div><div class="crit-desc">Extended contexts: logs, sine/cosine rule, rational functions, standard deviation, conditional probability, networks.</div></div>
+      <div class="criterion-card" style="background:#FAF5FF;border-color:#A78BFA"><div class="crit-label">Criterion B</div><div class="crit-name">Investigating Patterns</div><div class="crit-marks">25 marks · Q8</div><div class="crit-desc">Generalise complex patterns including geometric sequences, quadratic and exponential relationships.</div></div>
+      <div class="criterion-card" style="background:#FAF5FF;border-color:#6D28D9"><div class="crit-label">Criterion C</div><div class="crit-name">Communicating</div><div class="crit-marks">25 marks · All questions</div><div class="crit-desc">Formal justifications, derivations and precise notation.</div></div>
+      <div class="criterion-card" style="background:#FAF5FF;border-color:#5B21B6"><div class="crit-label">Criterion D</div><div class="crit-name">Applying Maths in Real-Life Contexts</div><div class="crit-marks">25 marks · Q6–7</div><div class="crit-desc">Complex modelling; exponential models, optimisation, network problems.</div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="math-ext-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">📐 Number System &amp; Algebra</div><ul class="topic-list"><li>Surds, roots, radicals; standard form; laws of exponents</li><li>Logarithms — laws of logarithms</li><li>Sequences; lower and upper bounds</li></ul></div>
+      <div class="card"><div class="card-title">📈 Functions</div><ul class="topic-list"><li>Linear, quadratic, cubic, rational, trigonometric, logarithmic functions</li><li>Transformation of quadratic functions</li><li>Linear programming; networks</li></ul></div>
+      <div class="card"><div class="card-title">📐 Geometry, Measurement &amp; Trigonometry</div><ul class="topic-list"><li>Sine rule and cosine rule; arc length; area of sector</li><li>Volume, surface area of pyramids, cones, compound shapes</li><li>Capacity conversions</li></ul></div>
+      <div class="card"><div class="card-title">📊 Statistics</div><ul class="topic-list"><li>Standard deviation; correlation; conditional probability</li><li>Addition and multiplication rule; dependent and independent events</li><li>Histograms for continuous fixed-interval groups</li></ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="math-ext-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>Definition</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>Prove / Derive</strong></td><td>Use logical steps / manipulate a relationship to obtain a new equation.</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Deduce</strong></td><td>Reach a conclusion from the information given.</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Show / Verify</strong></td><td>Give steps in a derivation / provide evidence that validates the result.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Formulate</strong></td><td>Express precisely and systematically the relevant argument.</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="section-panel" id="math-ext-tips">
+    <ul class="tips-list">
+      <li style="border-color:#3B82F6"><span class="tip-icon">✍️</span><div><strong>Show ALL steps.</strong> Criterion C runs through every question.</div></li>
+      <li style="border-color:#7C3AED"><span class="tip-icon">🧠</span><div><strong>If stuck on a later part,</strong> state an assumed value and proceed. Write "Using my answer from part (b)…"</div></li>
+      <li style="border-color:#6D28D9"><span class="tip-icon">🌿</span><div><strong>Logarithm questions:</strong> Always write the intermediate step before the final answer.</div></li>
+      <li style="border-color:#5B21B6"><span class="tip-icon">🔗</span><div><strong>Network problems:</strong> Draw/annotate the network. State your algorithm before applying it.</div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════ ENGLISH ══════════════════════════ -->
+<div class="subject-page" id="page-english">
+  <div class="page-hero" style="background:linear-gradient(135deg,#9D174D,#EC4899,#F9A8D4)">
+    <div class="hero-type">Language &amp; Literature</div>
+    <h2>English Language &amp; Literature</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks · 80 marks · 120 min</span><span class="hero-chip">A=20 · B=20 · C=20 · D=20</span><span class="hero-chip">Global Context: Identities &amp; Relationships</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('english','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('english','topics',this)">📚 Text Types</button><button class="section-tab" onclick="showSection('english','cmdterms',this)">🔑 Command Terms</button><button class="section-tab" onclick="showSection('english','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="english-blueprint">
+    <div class="card"><div class="card-title">📊 Official e-Assessment Blueprint</div>
+    <table class="bp-table"><thead><tr><th>Task</th><th>Description</th><th>A</th><th>B</th><th>C</th><th>D</th><th>Total</th></tr></thead><tbody>
+      <tr><td>Task 1a</td><td>Analysing — shorter response questions</td><td>10</td><td>—</td><td>—</td><td>—</td><td>10</td></tr>
+      <tr><td>Task 1b</td><td>Analysing — extended comparison question</td><td>10</td><td>10</td><td>—</td><td>—</td><td>20</td></tr>
+      <tr><td>Task 2</td><td>Producing literary text (from 2 static images)</td><td>—</td><td>—</td><td>10</td><td>10</td><td>20</td></tr>
+      <tr><td>Task 3</td><td>Producing non-literary text (Global Context)</td><td>—</td><td>10</td><td>10</td><td>10</td><td>30</td></tr>
+      <tr class="total-row"><td colspan="2"><strong>Total — 120 minutes</strong></td><td><strong>20</strong></td><td><strong>20</strong></td><td><strong>20</strong></td><td><strong>20</strong></td><td><strong>80</strong></td></tr>
+    </tbody></table></div>
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#FDF2F8;border-color:#EC4899"><div class="crit-label">Criterion A</div><div class="crit-name">Analysing</div><div class="crit-marks">20 marks · Tasks 1a + 1b</div><div class="crit-desc">Analyse techniques in written AND multimedia texts.</div></div>
+      <div class="criterion-card" style="background:#FDF2F8;border-color:#BE185D"><div class="crit-label">Criterion B</div><div class="crit-name">Organising</div><div class="crit-marks">20 marks · Tasks 1b + 3</div><div class="crit-desc">Organise work in a coherent and logical manner.</div></div>
+      <div class="criterion-card" style="background:#FDF2F8;border-color:#F472B6"><div class="crit-label">Criterion C</div><div class="crit-name">Producing Text</div><div class="crit-marks">20 marks · Tasks 2 + 3</div><div class="crit-desc">Produce literary and non-literary texts showing imagination and awareness of audience.</div></div>
+      <div class="criterion-card" style="background:#FDF2F8;border-color:#DB2777"><div class="crit-label">Criterion D</div><div class="crit-name">Using Language</div><div class="crit-marks">20 marks · Tasks 2 + 3</div><div class="crit-desc">Grammar, spelling, punctuation, capitalisation and variety of sentence structures.</div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="english-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">📖 Task 1 — Analysing</div><ul class="topic-list"><li>Literary techniques: metaphor, simile, personification, alliteration, irony, symbolism</li><li>Media/visual: camera angle, colour, layout, typography</li><li>Purpose and audience analysis</li><li>PEEL: Point → Evidence → Effect → Link</li></ul></div>
+      <div class="card"><div class="card-title">✍️ Tasks 2 &amp; 3 — Producing</div><ul class="topic-list"><li>Task 2: Creative writing from images — story, monologue, poem</li><li>Task 3: Article, speech, letter, blog linked to Global Context</li><li>Persuasive features: rhetorical questions, tricolon, direct address</li><li>Criterion D: grammar, spelling, punctuation, capitalisation</li></ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="english-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>Definition</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>Identify / Select</strong></td><td>Recognise and state briefly a distinguishing fact or feature.</td><td><span class="level-pill l1">Basic</span></td></tr>
+      <tr><td><strong>Describe / Explain</strong></td><td>Give a detailed account / detailed account including reasons.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Analyse</strong></td><td>Break down to bring out essential elements; interpret to reach conclusions.</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Compare and contrast</strong></td><td>Account of similarities AND differences, referring to both throughout.</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Evaluate / Create</strong></td><td>Appraise by weighing strengths and limitations / evolve from own imagination.</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="section-panel" id="english-tips">
+    <ul class="tips-list">
+      <li style="border-color:#EC4899"><span class="tip-icon">🎯</span><div>For each technique: name it → quote it → explain the effect on the reader.</div></li>
+      <li style="border-color:#BE185D"><span class="tip-icon">⚖️</span><div><strong>Q 1e (compare and contrast):</strong> Reference BOTH texts in EVERY paragraph. Use transition words (Similarly, In contrast, However).</div></li>
+      <li style="border-color:#F472B6"><span class="tip-icon">🖼️</span><div><strong>Task 2:</strong> A focused, atmospheric short piece scores higher than a longer, wandering one.</div></li>
+      <li style="border-color:#DB2777"><span class="tip-icon">📝</span><div><strong>Criterion D is about mechanics.</strong> Use a variety of sentence structures.</div></li>
+      <li style="border-color:#EC4899"><span class="tip-icon">🌍</span><div><strong>Task 3 must connect to the Global Context: Identities and Relationships.</strong></div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════ FRENCH ══════════════════════════ -->
+<div class="subject-page" id="page-french">
+  <div class="page-hero" style="background:linear-gradient(135deg,#065F46,#10B981,#6EE7B7)">
+    <div class="hero-type">Language Acquisition</div>
+    <h2>French</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks + Speaking</span><span class="hero-chip">🔢 On-screen: 72 marks · Speaking: 24 marks</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('french','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('french','topics',this)">📚 Topics</button><button class="section-tab" onclick="showSection('french','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="french-blueprint">
+    <div class="card"><div class="card-title">📊 Blueprint</div>
+    <table class="bp-table"><thead><tr><th>Task</th><th>Criteria</th><th>Marks</th></tr></thead><tbody>
+      <tr><td>Task 1 — Listening</td><td>A</td><td>24</td></tr>
+      <tr><td>Task 2 — Reading</td><td>B</td><td>24</td></tr>
+      <tr><td>Task 3 — Writing</td><td>D</td><td>24</td></tr>
+      <tr><td>Speaking (separate)</td><td>C</td><td>24</td></tr>
+      <tr class="total-row"><td><strong>Total</strong></td><td>A+B+C+D</td><td><strong>96</strong></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="section-panel" id="french-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">🗣️ Topics</div><ul class="topic-list"><li>Identity and culture; free time; food and health</li><li>Education and work; future plans</li><li>Environment; global issues; travel and tourism</li><li>Technology and social media</li></ul></div>
+      <div class="card"><div class="card-title">✍️ Text Types</div><ul class="topic-list"><li>Diary, letter (formal + informal), blog, article, email, speech, brochure</li></ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="french-tips">
+    <ul class="tips-list">
+      <li style="border-color:#10B981"><span class="tip-icon">🎧</span><div><strong>Listening:</strong> Read questions before the audio begins. Write in French — short answers are accepted if accurate.</div></li>
+      <li style="border-color:#065F46"><span class="tip-icon">🔡</span><div><strong>Writing:</strong> Use at least 3 tenses. Include a subjunctive for band 7–8 in Capable.</div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════ SPANISH ══════════════════════════ -->
+<div class="subject-page" id="page-spanish">
+  <div class="page-hero" style="background:linear-gradient(135deg,#92400E,#F59E0B,#FCD34D)">
+    <div class="hero-type">Language Acquisition</div>
+    <h2>Spanish</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks + Speaking</span><span class="hero-chip">🔢 72 marks on-screen · 24 speaking</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('spanish','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('spanish','topics',this)">📚 Topics</button><button class="section-tab" onclick="showSection('spanish','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="spanish-blueprint">
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#FFFBEB;border-color:#F59E0B"><div class="crit-label">Criterion A</div><div class="crit-name">Listening</div><div class="crit-marks">24 marks · Task 1</div><div class="crit-desc">Comprehend audio-visual text in Spanish.</div></div>
+      <div class="criterion-card" style="background:#FFFBEB;border-color:#D97706"><div class="crit-label">Criterion B</div><div class="crit-name">Reading</div><div class="crit-marks">24 marks · Task 2</div><div class="crit-desc">Comprehend written-visual text.</div></div>
+      <div class="criterion-card" style="background:#FFFBEB;border-color:#B45309"><div class="crit-label">Criterion C</div><div class="crit-name">Speaking</div><div class="crit-marks">24 marks · Separate assessment</div><div class="crit-desc">Individual speaking examination.</div></div>
+      <div class="criterion-card" style="background:#FFFBEB;border-color:#92400E"><div class="crit-label">Criterion D</div><div class="crit-name">Writing</div><div class="crit-marks">24 marks · Task 3</div><div class="crit-desc">Extended writing linked to the global context.</div></div>
+    </div>
+    <div class="callout callout-warn" style="margin-top:14px"><span class="callout-icon">📄</span><div><strong>Required Reference Document:</strong> <a href="https://docs.google.com/document/d/10AfsXYp5X4gw97VYMtbm846FGfTxH6OBfWLzrX9RN1Q/edit?tab=t.lnlwg8wtv271" target="_blank" style="color:#92400E;font-weight:800">Open Spanish Exam Reference &amp; Study Material ↗</a> — go through this thoroughly before the exam.</div></div>
+  </div>
+  <div class="section-panel" id="spanish-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">🇪🇸 Grammar</div><ul class="topic-list"><li>ser/estar; present, near future, future, preterite, conditional</li><li>Reflexive verbs; negation; imperatives</li></ul></div>
+      <div class="card"><div class="card-title">✍️ Text Types + Topics</div><ul class="topic-list"><li>Diary, letter, blog, article, email, speech, brochure</li><li>Same topic areas as French</li></ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="spanish-tips">
+    <ul class="tips-list">
+      <li style="border-color:#F59E0B"><span class="tip-icon">⚖️</span><div><strong>Ser vs Estar:</strong> Ser = permanent; Estar = temporary states.</div></li>
+      <li style="border-color:#D97706"><span class="tip-icon">✅</span><div><strong>Accents:</strong> Missing accents change meaning. Check all accents at the end.</div></li>
+      <li style="border-color:#B45309"><span class="tip-icon">🌍</span><div><strong>V/F/NM:</strong> Only use the text — not outside knowledge.</div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════ HINDI ══════════════════════════ -->
+<div class="subject-page" id="page-hindi">
+  <div class="page-hero" style="background:linear-gradient(135deg,#7F1D1D,#EF4444,#FCA5A5)">
+    <div class="hero-type">Language Acquisition</div>
+    <h2>Hindi</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks + Speaking</span><span class="hero-chip">🔢 72 marks on-screen · 24 speaking</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('hindi','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('hindi','topics',this)">📚 Topics</button><button class="section-tab" onclick="showSection('hindi','cmdterms',this)">🔑 Command Terms</button><button class="section-tab" onclick="showSection('hindi','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="hindi-blueprint">
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#FEF2F2;border-color:#EF4444"><div class="crit-label">Criterion A</div><div class="crit-name">श्रवण (Listening)</div><div class="crit-marks">24 marks · Task 1</div><div class="crit-desc">Comprehend audio-visual text in Hindi.</div></div>
+      <div class="criterion-card" style="background:#FEF2F2;border-color:#DC2626"><div class="crit-label">Criterion B</div><div class="crit-name">पठन (Reading)</div><div class="crit-marks">24 marks · Task 2</div><div class="crit-desc">Comprehend written-visual text in Hindi.</div></div>
+      <div class="criterion-card" style="background:#FEF2F2;border-color:#B91C1C"><div class="crit-label">Criterion C</div><div class="crit-name">वाचन (Speaking)</div><div class="crit-marks">24 marks · Separate</div><div class="crit-desc">Individual speaking assessment in Hindi.</div></div>
+      <div class="criterion-card" style="background:#FEF2F2;border-color:#991B1B"><div class="crit-label">Criterion D</div><div class="crit-name">लेखन (Writing)</div><div class="crit-marks">24 marks · Task 3</div><div class="crit-desc">Extended writing in Hindi.</div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="hindi-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">📚 विषय सूची</div><ul class="topic-list"><li>पहचान और संस्कृति; खाली समय; भोजन और स्वास्थ्य</li><li>शिक्षा और कार्यक्षेत्र; भविष्य की योजनाएँ</li><li>पर्यावरण; यात्रा और पर्यटन; प्रौद्योगिकी और मीडिया</li></ul></div>
+      <div class="card"><div class="card-title">✍️ लेखन प्रकार</div><ul class="topic-list"><li>अनौपचारिक/औपचारिक पत्र; ब्लॉग/डायरी; समाचार लेख</li><li>भाषण; साक्षात्कार; ब्रोशर; ईमेल; विज्ञापन</li></ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="hindi-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>हिंदी अर्थ</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>Identify / Find</strong></td><td>पहचानना / ढूँढना</td><td><span class="level-pill l1">Basic</span></td></tr>
+      <tr><td><strong>Describe / Explain</strong></td><td>वर्णन करना / विस्तार में समझाना</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Discuss / Evaluate</strong></td><td>चर्चा करना / मूल्यांकन करना</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="section-panel" id="hindi-tips">
+    <ul class="tips-list">
+      <li style="border-color:#EF4444"><span class="tip-icon">📝</span><div><strong>औपचारिक पत्र का प्रारूप अनिवार्य है।</strong> प्रेषक का पता, तिथि, विषय, संबोधन, समापन।</div></li>
+      <li style="border-color:#DC2626"><span class="tip-icon">🔡</span><div><strong>समृद्ध शब्द-भंडार का प्रयोग करें।</strong> साधारण शब्दों के स्थान पर विशेष शब्दों का प्रयोग।</div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════ PHYSICS ══════════════════════════ -->
+<div class="subject-page" id="page-physics">
+  <div class="page-hero" style="background:linear-gradient(135deg,#0C4A6E,#0EA5E9,#7DD3FC)">
+    <div class="hero-type">Sciences</div>
+    <h2>Physics</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks · 100 marks</span><span class="hero-chip">A=25 · B=25 · C=25 · D=25</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('physics','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('physics','topics',this)">📚 Topics</button><button class="section-tab" onclick="showSection('physics','cmdterms',this)">🔑 Command Terms</button><button class="section-tab" onclick="showSection('physics','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="physics-blueprint">
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#F0F9FF;border-color:#0EA5E9"><div class="crit-label">Criterion A</div><div class="crit-name">Knowing &amp; Understanding</div><div class="crit-marks">25 marks</div><div class="crit-desc">Apply physics concepts, definitions and equations.</div></div>
+      <div class="criterion-card" style="background:#F0F9FF;border-color:#0284C7"><div class="crit-label">Criterion B</div><div class="crit-name">Inquiring &amp; Designing</div><div class="crit-marks">25 marks</div><div class="crit-desc">Hypothesis (If/Then/Because), variables table, method, safety.</div></div>
+      <div class="criterion-card" style="background:#F0F9FF;border-color:#0369A1"><div class="crit-label">Criterion C</div><div class="crit-name">Processing &amp; Evaluating</div><div class="crit-marks">25 marks</div><div class="crit-desc">Tables, graphs, evaluate hypothesis and method, improvements and extensions.</div></div>
+      <div class="criterion-card" style="background:#FFF0F3;border-color:#F43F5E"><div class="crit-label">Criterion D</div><div class="crit-name">Reflecting on Impacts</div><div class="crit-marks">25 marks · Task 3</div><div class="crit-desc">Explain and evaluate using data from text/video/animation. Address social, ethical, economic and environmental implications.</div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="physics-topics">
+    <div class="grid-3">
+      <div class="card"><div class="card-title">⚡ Forces &amp; Motion</div><ul class="topic-list"><li>Density; forces; speed, velocity, acceleration</li><li>Newton's laws; Hooke's law; momentum</li><li>Work, power, efficiency</li></ul></div>
+      <div class="card"><div class="card-title">🔋 Energy</div><ul class="topic-list"><li>KE and PE calculations; energy transfer</li><li>Renewable and non-renewable energy</li></ul></div>
+      <div class="card"><div class="card-title">🌡️ Heat</div><ul class="topic-list"><li>States of matter; heat transfer</li><li>Specific heat; latent heat</li></ul></div>
+      <div class="card"><div class="card-title">🌊 Waves</div><ul class="topic-list"><li>Longitudinal and transverse waves</li><li>Wave equation; EM spectrum</li></ul></div>
+      <div class="card"><div class="card-title">☢️ Atomic Structure</div><ul class="topic-list"><li>Sub-atomic particles; isotopes</li><li>α, β, γ radiation; half-life; nuclear fission/fusion</li></ul></div>
+      <div class="card"><div class="card-title">🔌 Electricity &amp; Universe</div><ul class="topic-list"><li>Circuits; Ohm's law; transformers</li><li>Solar system; Big Bang; telescopes</li></ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="physics-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>Definition</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>State / Define / Identify</strong></td><td>Brief answer without explanation.</td><td><span class="level-pill l1">Basic</span></td></tr>
+      <tr><td><strong>Calculate / Describe / Explain / Predict</strong></td><td>Numerical answer with working / detailed account / account with reasons / expected result.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Analyse / Evaluate / Justify</strong></td><td>Break down to reach conclusions / appraise strengths and limitations / give valid reasons.</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="section-panel" id="physics-tips">
+    <div class="do-dont-grid">
+      <div class="do-block"><h4>✔ DO</h4><ul>
+        <li>Always write unit AND direction with numerical answers</li>
+        <li>Convert units BEFORE substituting into formulae</li>
+        <li>Formula → substitute → calculate (3 steps visible)</li>
+        <li>Hypothesis: If/Then/Because with scientific reasoning</li>
+        <li>Variables in a TABLE with SI units, instrument, reason</li>
+        <li>Graph: IV on x-axis, DV on y-axis, both with SI units</li>
+        <li>5 data points minimum; 3 trials; calculate mean</li>
+        <li>Say hypothesis is "supported/not supported" with data</li>
+      </ul></div>
+      <div class="dont-block"><h4>✘ DON'T</h4><ul>
+        <li>Skip units on numerical answers</li>
+        <li>Substitute before converting units</li>
+        <li>Write variables in prose — use tabular format</li>
+        <li>Say hypothesis is "correct" or "wrong"</li>
+        <li>Draw graph dot-to-dot instead of best-fit line</li>
+        <li>Confuse improvements with extensions</li>
+      </ul></div>
+    </div>
+    <div style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE);border-radius:12px;padding:18px 22px;margin-bottom:14px;border-left:5px solid #3B82F6">
+      <div style="font-size:.73rem;font-weight:800;color:#1D4ED8;text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px">📋 Criterion B — Sufficient Data: 5 data points · 3 trials per point · Calculate mean</div>
+      <div style="background:#DBEAFE;border-radius:8px;padding:10px 14px;margin-top:8px;font-size:.79rem;color:#1E3A8A"><strong>⚠️ Anomalous results:</strong> Exclude from mean, circle on graph, comment in evaluation.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ CHEMISTRY ══════════════════════════ -->
+<div class="subject-page" id="page-chemistry">
+  <div class="page-hero" style="background:linear-gradient(135deg,#7C2D12,#F97316,#FDBA74)">
+    <div class="hero-type">Sciences</div>
+    <h2>Chemistry</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks · 100 marks</span><span class="hero-chip">A=25 · B=25 · C=25 · D=25</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('chemistry','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('chemistry','topics',this)">📚 Topics</button><button class="section-tab" onclick="showSection('chemistry','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="chemistry-blueprint">
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#FFF7ED;border-color:#F97316"><div class="crit-label">Criterion A</div><div class="crit-name">Knowing &amp; Understanding</div><div class="crit-marks">25 marks</div><div class="crit-desc">Recall and apply chemistry knowledge.</div></div>
+      <div class="criterion-card" style="background:#FFF7ED;border-color:#EA580C"><div class="crit-label">Criterion B</div><div class="crit-name">Inquiring &amp; Designing</div><div class="crit-marks">25 marks</div><div class="crit-desc">Hypothesis, variables table, method, specific safety for chemicals used.</div></div>
+      <div class="criterion-card" style="background:#FFF7ED;border-color:#FDBA74"><div class="crit-label">Criterion C</div><div class="crit-name">Processing &amp; Evaluating</div><div class="crit-marks">25 marks</div><div class="crit-desc">Tables, graphs, evaluate hypothesis and method, improvements and extensions.</div></div>
+      <div class="criterion-card" style="background:#FFF0F3;border-color:#F43F5E"><div class="crit-label">Criterion D</div><div class="crit-name">Reflecting on Impacts</div><div class="crit-marks">25 marks · Task 3</div><div class="crit-desc">Explain and evaluate using data from text/video/animation. Social, ethical, economic, environmental implications.</div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="chemistry-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">🔬 Units 1–5</div><ul class="topic-list"><li>Mysteries of Matter: states, purification, diffusion</li><li>Inside the Atom: bonding, formulae, equations</li><li>Periodic Trends and Properties</li><li>Rate of Reaction: collision theory, factors affecting rate</li><li>Energetics: exothermic/endothermic, bond energies, fuels</li></ul></div>
+      <div class="card"><div class="card-title">🧪 Units 6–10</div><ul class="topic-list"><li>Acids, Bases and pH; salts; neutralisation</li><li>Equilibrium; Haber's Process</li><li>Redox; electrolysis; corrosion; extraction of metals</li><li>Organic Chemistry: alkanes, alkenes, alcohols, esters</li><li>Environment: air pollution, ozone, water cycle, carbon cycle</li></ul></div>
+      <div class="card"><div class="card-title">⚖️ Stoichiometry</div><ul class="topic-list"><li>Percentage composition; empirical formula; molar mass</li><li>Mass–mass, mass–volume, volume–volume relationships</li><li>Percentage yield</li></ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="chemistry-tips">
+    <div class="do-dont-grid">
+      <div class="do-block"><h4>✔ DO</h4><ul>
+        <li>Hypothesis: If/Then/Because with collision theory reasoning</li>
+        <li>Balance equations by adding coefficients only</li>
+        <li>Data table: 3 trials + average column, all SI units</li>
+        <li>Cite all sources in Criterion D answers</li>
+      </ul></div>
+      <div class="dont-block"><h4>✘ DON'T</h4><ul>
+        <li>Write generic safety advice ("be careful")</li>
+        <li>List variables in prose — use tabular format</li>
+        <li>Say hypothesis is "correct/wrong"</li>
+        <li>Draw graph dot-to-dot instead of best-fit line</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ BIOLOGY ══════════════════════════ -->
+<div class="subject-page" id="page-biology">
+  <div class="page-hero" style="background:linear-gradient(135deg,#14532D,#22C55E,#86EFAC)">
+    <div class="hero-type">Sciences</div>
+    <h2>Biology</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks · 100 marks</span><span class="hero-chip">A=25 · B=25 · C=25 · D=25</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('biology','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('biology','topics',this)">📚 Topics</button><button class="section-tab" onclick="showSection('biology','cmdterms',this)">🔑 Command Terms</button><button class="section-tab" onclick="showSection('biology','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="biology-blueprint">
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#F0FDF4;border-color:#22C55E"><div class="crit-label">Criterion A</div><div class="crit-name">Knowing &amp; Understanding</div><div class="crit-marks">25 marks</div><div class="crit-desc">Recall biological facts; explain processes; apply to unseen contexts.</div></div>
+      <div class="criterion-card" style="background:#F0FDF4;border-color:#16A34A"><div class="crit-label">Criterion B</div><div class="crit-name">Inquiring &amp; Designing</div><div class="crit-marks">25 marks</div><div class="crit-desc">Hypothesis, variables table, full method with ≥3 trials, safety.</div></div>
+      <div class="criterion-card" style="background:#F0FDF4;border-color:#86EFAC"><div class="crit-label">Criterion C</div><div class="crit-name">Processing &amp; Evaluating</div><div class="crit-marks">25 marks</div><div class="crit-desc">Tables, graphs, evaluate hypothesis and method, improvements and extensions.</div></div>
+      <div class="criterion-card" style="background:#FFF0F3;border-color:#F43F5E"><div class="crit-label">Criterion D</div><div class="crit-name">Reflecting on Impacts</div><div class="crit-marks">25 marks · Task 3</div><div class="crit-desc">Explain and evaluate using data. Address social, ethical, economic and environmental implications.</div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="biology-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">🧬 Units 1–4</div><ul class="topic-list"><li>Cell theory; organelles; classification</li><li>Aerobic and anaerobic respiration; photosynthesis; enzymes</li><li>Nutrition; digestion; respiratory and circulatory systems</li><li>Homeostasis; osmosis; surface area to volume ratio</li></ul></div>
+      <div class="card"><div class="card-title">🌍 Units 5–11</div><ul class="topic-list"><li>Health; immune response; vaccination; antibiotic resistance</li><li>DNA; genetics; Punnett squares; mitosis and meiosis</li><li>Evolution; nervous system; ecology; biotechnology</li></ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="biology-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>Definition</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>State / Identify / List</strong></td><td>Brief biological term or answer.</td><td><span class="level-pill l1">Basic</span></td></tr>
+      <tr><td><strong>Describe / Explain / Compare</strong></td><td>Detailed account / with reasons / similarities between two entities.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Discuss / Evaluate</strong></td><td>Balanced review with evidence / appraise strengths and limitations.</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="section-panel" id="biology-tips">
+    <div class="do-dont-grid">
+      <div class="do-block"><h4>✔ DO</h4><ul>
+        <li>Use precise biological terminology (osmosis, water potential, selectively permeable)</li>
+        <li>Use % change in mass for osmosis graphs</li>
+        <li>Hypothesis: If/Then/Because with water potential reasoning</li>
+        <li>Name specific examples in ecology</li>
+      </ul></div>
+      <div class="dont-block"><h4>✘ DON'T</h4><ul>
+        <li>Say "water went in" — use osmosis terminology</li>
+        <li>Confuse osmosis with diffusion</li>
+        <li>Confuse mitosis with meiosis</li>
+        <li>List variables in prose — use tabular format</li>
+      </ul></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════ INTEGRATED HUMANITIES ══════════════════════════ -->
+<div class="subject-page" id="page-inthumans">
+  <div class="page-hero" style="background:linear-gradient(135deg,#365314,#84CC16,#BEF264)">
+    <div class="hero-type">Individuals &amp; Societies</div>
+    <h2>Integrated Humanities</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks · 80 marks</span><span class="hero-chip">Investigating · Communicating · Thinking Critically</span></div>
+  </div>
+  <div class="section-tabs">
+    <button class="section-tab active" onclick="showSection('inthumans','blueprint',this)">📊 Blueprint</button>
+    <button class="section-tab" onclick="showSection('inthumans','topics',this)">📚 Topics</button>
+    <button class="section-tab" onclick="showSection('inthumans','cmdterms',this)">🔑 Command Terms</button>
+    <button class="section-tab" onclick="showSection('inthumans','essay',this)">📝 Discussion Essay</button>
+    <button class="section-tab" onclick="showSection('inthumans','tips',this)">💡 Exam Tips</button>
+  </div>
+
+  <!-- BLUEPRINT -->
+  <div class="section-panel active" id="inthumans-blueprint">
+    <div class="callout callout-info"><span class="callout-icon">ℹ️</span><div>I&amp;S uses a task-based blueprint. The "Thinking Critically" task carries the highest marks (36). For the full official blueprint visit: <a href="https://sites.google.com/pathwaysschool.in/myp5-ih-geography-bykirti/e-assessment/blueprint" target="_blank" style="color:#1D4ED8;font-weight:700">Pathways School Blueprint ↗</a></div></div>
+    <div class="card"><div class="card-title">📊 Official I&amp;S Blueprint</div>
+    <table class="bp-table"><thead><tr><th>Task</th><th>Total</th><th>Criteria</th><th>Marks</th></tr></thead><tbody>
+      <tr><td>Investigating</td><td>26</td><td>A (Knowing &amp; Understanding)</td><td>6</td></tr>
+      <tr><td></td><td></td><td>B (Investigating)</td><td>20</td></tr>
+      <tr><td>Communicating</td><td>18</td><td>A (Knowing &amp; Understanding)</td><td>6</td></tr>
+      <tr><td></td><td></td><td>C (Communicating)</td><td>12</td></tr>
+      <tr><td>Thinking Critically</td><td>36</td><td>A (Knowing &amp; Understanding)</td><td>8</td></tr>
+      <tr><td></td><td></td><td>C (Communicating)</td><td>8</td></tr>
+      <tr><td></td><td></td><td>D (Thinking Critically)</td><td>20</td></tr>
+      <tr class="total-row"><td><strong>Total</strong></td><td><strong>80</strong></td><td>A+B+C+D</td><td>A:20 · B:20 · C:20 · D:20</td></tr>
+    </tbody></table></div>
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#F7FEE7;border-color:#84CC16"><div class="crit-label">Criterion A</div><div class="crit-name">Knowing &amp; Understanding</div><div class="crit-marks">Assessed across ALL tasks</div><div class="crit-desc">Demonstrate knowledge of key concepts, events and issues. Apply understanding to questions and source material.</div></div>
+      <div class="criterion-card" style="background:#F7FEE7;border-color:#65A30D">
+        <div class="crit-label">Criterion B</div>
+        <div class="crit-name">Investigating</div>
+        <div class="crit-marks">20 marks · Task 1</div>
+        <div class="crit-desc">Formulate and justify research questions; formulate action plans; use and evaluate sources; evaluate process and results.</div>
+        <div style="margin-top:10px">
+          <a href="https://sites.google.com/pathwaysschool.in/myp5-ih-geography-bykirti/e-assessment/blueprint" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#365314;color:#fff;padding:6px 14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.74rem;transition:.2s">🔗 Official Blueprint ↗</a>
+        </div>
+      </div>
+      <div class="criterion-card" style="background:#F7FEE7;border-color:#4D7C0F">
+        <div class="crit-label">Criterion C</div>
+        <div class="crit-name">Communicating</div>
+        <div class="crit-marks">Tasks 2 &amp; 3</div>
+        <div class="crit-desc">Engage creatively with the topic; present information in the specified format.</div>
+        <div style="margin-top:8px;background:#ECFCCB;border-radius:6px;padding:7px 10px;font-size:.76rem;color:#365314"><strong>Examples:</strong> Speech, Blog, Letter, Podcast Script</div>
+      </div>
+      <div class="criterion-card" style="background:#F7FEE7;border-color:#BEF264">
+        <div class="crit-label">Criterion D</div>
+        <div class="crit-name">Thinking Critically</div>
+        <div class="crit-marks">20 marks · Task 3</div>
+        <div class="crit-desc">Analyse and evaluate issues from multiple perspectives; construct a well-justified, evidence-based argument.</div>
+        <div style="margin-top:8px;background:#ECFCCB;border-radius:6px;padding:7px 10px;font-size:.76rem;color:#365314"><strong>Includes:</strong> Evaluate Sources (OPVL) — see Topics tab for full OPVL framework.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPICS -->
+  <div class="section-panel" id="inthumans-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">🌍 Integrated Humanities Syllabus Topics</div><ul class="topic-list">
+        <li>Superpowers, empires and supra-national institutions</li>
+        <li>Significant individuals</li>
+        <li>Peace and conflict</li>
+        <li>Rights and social protest and movements</li>
+        <li>Globalisation: trade, aid, exchange and flows</li>
+        <li>Economic agents: consumers, producers, governments, banks</li>
+        <li>Growth and development indicators</li>
+        <li>Industrialisation and technological developments</li>
+        <li>Changing population: natural increase, structure and migration</li>
+        <li>Resource management</li>
+        <li>Sustainable management of urban and natural environments</li>
+      </ul></div>
+
+      <!-- OPVL Framework card -->
+      <div class="card">
+        <div class="card-title">🔍 Source Analysis Framework — OPVL</div>
+        <div style="background:linear-gradient(135deg,#F7FEE7,#ECFCCB);border-radius:10px;padding:14px 16px;margin-bottom:14px;border-left:4px solid #84CC16;font-size:.8rem;color:#365314;line-height:1.6">
+          <strong>Task:</strong> With reference to origin and purpose, analyse the value and limitation of the source for a historian studying Peace and Conflict.
+        </div>
+
+        <table class="opvl-table">
+          <thead><tr><th style="border-radius:8px 0 0 0;width:22%">Section</th><th style="width:39%">Values</th><th style="border-radius:0 8px 0 0;width:39%">Limitations</th></tr></thead>
+          <tbody>
+            <tr>
+              <td style="background:#F7FEE7">
+                <strong style="color:#365314">Origins</strong>
+                <div style="font-size:.74rem;color:#4D7C0F;margin-top:4px">When, where, and by whom it was produced?</div>
+                <div style="font-size:.72rem;color:#65A30D;margin-top:6px;line-height:1.4">Is it a primary or secondary source?</div>
+              </td>
+              <td style="font-size:.77rem;line-height:1.55">What are some <strong>values</strong> of the document based on its <strong>origin</strong>?<br><br><span style="color:var(--text-muted);font-size:.72rem">e.g. Created by an eyewitness / official record / close to the event in time</span></td>
+              <td style="font-size:.77rem;line-height:1.55">What are some <strong>limitations</strong> of the document based on its <strong>origin</strong>?<br><br><span style="color:var(--text-muted);font-size:.72rem">e.g. Single perspective / created long after the event / author's limited access</span></td>
+            </tr>
+            <tr>
+              <td style="background:#F7FEE7">
+                <strong style="color:#365314">Purpose</strong>
+                <div style="font-size:.74rem;color:#4D7C0F;margin-top:4px">What is the intended audience?</div>
+                <div style="font-size:.72rem;color:#65A30D;margin-top:6px;line-height:1.4">Fact, opinion, or propaganda?</div>
+              </td>
+              <td style="font-size:.77rem;line-height:1.55">What are some <strong>values</strong> of the document based on its <strong>purpose</strong>?<br><br><span style="color:var(--text-muted);font-size:.72rem">e.g. Created to inform the public / official communication / reveals intent of the author/group</span></td>
+              <td style="font-size:.77rem;line-height:1.55">What are some <strong>limitations</strong> of the document based on its <strong>purpose</strong>?<br><br><span style="color:var(--text-muted);font-size:.72rem">e.g. Produced for propaganda / selective in what it presents / may omit opposing views</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top:16px;display:flex;flex-direction:column;gap:10px">
+          <!-- Steps detail -->
+          <div style="background:#EFF6FF;border-radius:8px;padding:12px 14px;font-size:.78rem;border-left:3px solid #3B82F6">
+            <div style="font-weight:800;color:#1D4ED8;margin-bottom:6px;font-size:.8rem">Step 1 — Origin: Key Questions to Ask</div>
+            <ul style="list-style:none;color:#1E3A8A;line-height:1.7">
+              <li>→ Is it a <strong>primary</strong> (original, first-hand) or <strong>secondary</strong> (interpreted, hindsight) source?</li>
+              <li>→ Where does this source come from? When was it published?</li>
+              <li>→ Who is the author, publisher or organisation?</li>
+              <li>→ Are the author's credentials or affiliations given? Are they reliable?</li>
+            </ul>
+          </div>
+          <div style="background:#FFF7ED;border-radius:8px;padding:12px 14px;font-size:.78rem;border-left:3px solid #F59E0B">
+            <div style="font-weight:800;color:#B45309;margin-bottom:6px;font-size:.8rem">Step 2 — Purpose: Key Questions to Ask</div>
+            <ul style="list-style:none;color:#78350F;line-height:1.7">
+              <li>→ What was the purpose of the information? Is it fact, fiction, opinion or propaganda?</li>
+              <li>→ Who is the intended audience? Does the point of view appear objective or impartial?</li>
+              <li>→ Why did the author create it in this way? Can it tell you more than is on the surface?</li>
+            </ul>
+          </div>
+          <div style="background:#F0FDF4;border-radius:8px;padding:12px 14px;font-size:.78rem;border-left:3px solid #22C55E">
+            <div style="font-weight:800;color:#15803D;margin-bottom:6px;font-size:.8rem">Step 3 — Value: Key Questions to Ask</div>
+            <ul style="list-style:none;color:#166534;line-height:1.7">
+              <li>→ How has the source helped with your research? What questions has it answered?</li>
+              <li>→ What can we tell about the time period, debates or the author's opinion from the source?</li>
+              <li>→ Can you verify the information in another source (corroboration)?</li>
+            </ul>
+          </div>
+          <div style="background:#FEF2F2;border-radius:8px;padding:12px 14px;font-size:.78rem;border-left:3px solid #EF4444">
+            <div style="font-weight:800;color:#991B1B;margin-bottom:6px;font-size:.8rem">Step 4 — Limitations: Key Questions to Ask</div>
+            <ul style="list-style:none;color:#7F1D1D;line-height:1.7">
+              <li>→ At what point does this source <strong>stop being of value</strong>? What part of the story can we NOT tell from it?</li>
+              <li>→ What does the author leave out and why (if you know)?</li>
+              <li>→ <strong>Being biased does NOT limit the value of a source by itself</strong> — you must explain specifically: who is it biased towards/against, and what part of the story is MISSING because of parts left out?</li>
+              <li>→ Does it inaccurately reflect anything about the time period?</li>
+            </ul>
+          </div>
+          <div style="background:#FAF5FF;border-radius:8px;padding:12px 14px;font-size:.78rem;border-left:3px solid #8B5CF6">
+            <div style="font-weight:800;color:#4C1D95;margin-bottom:6px;font-size:.8rem">🎯 Marking Reminder (from Assessment Rubric)</div>
+            <div style="color:#3B0764;line-height:1.6">To score in the top band, your OPVL response must offer <strong>two or more insights that are accurate and relevant</strong> to both the value and the limitation of the document — connected clearly to its origin and purpose.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMAND TERMS -->
+  <div class="section-panel" id="inthumans-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>Definition</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>Identify / State / Define</strong></td><td>Name a distinguishing fact or give a precise meaning.</td><td><span class="level-pill l1">Basic</span></td></tr>
+      <tr><td><strong>Describe / Explain</strong></td><td>Detailed account / detailed account including reasons or causes.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Analyse</strong></td><td>Break down to bring out essential elements; interpret to reach conclusions.</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Discuss</strong></td><td>Offer a considered and balanced review including a range of arguments, factors or hypotheses. Opinions/conclusions should be supported with evidence.</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Evaluate / To what extent / Justify</strong></td><td>Appraise strengths and limitations / Consider merits of an argument / Give valid reasons or evidence.</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Synthesise</strong></td><td>Combine different ideas in order to create new understanding.</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <!-- DISCUSSION ESSAY -->
+  <div class="section-panel" id="inthumans-essay">
+    <div class="callout callout-warn"><span class="callout-icon">📌</span><div>The <strong>Thinking Critically task (36 marks, including 20 for Criterion D)</strong> most commonly uses "Discuss" as the command term. Write in essay form — no bullet points within the essay.</div></div>
+
+    <div style="background:linear-gradient(135deg,#F7FEE7,#ECFCCB);border-radius:12px;padding:20px 24px;margin-bottom:18px;border-left:5px solid #84CC16">
+      <div style="font-size:.73rem;font-weight:800;color:#365314;text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px">📖 What is a Discussion Essay?</div>
+      <div style="font-size:.84rem;color:#14532D;line-height:1.7">
+        Many essay titles require you to examine <strong>both sides</strong> of a situation and to conclude by saying which side you favour. These are known as <strong>discussion</strong> or <em>for and against</em> essays. In this sense, the academic meaning of the word <em>discuss</em> is similar to its everyday meaning — two people talking about a topic from different sides. For a discussion essay, a <strong>balanced view</strong> is normally essential.<br><br>
+        This makes discussion essays distinct from <em>persuasion essays</em>, for which only one side of the argument is given. When writing a discussion essay, it is important to ensure that <strong>facts and opinions are clearly separated</strong>. Often you will examine what other people have already said on the same subject and include this information using paraphrasing and summarising skills, as well as correct citations.
+      </div>
+    </div>
+
+    <div class="essay-guide">
+      <div class="essay-guide-header" style="background:linear-gradient(135deg,#365314,#84CC16)">
+        <h3>Discussion Essay — Structure Guide</h3>
+        <p>Always write in flowing prose. Every claim needs specific evidence or an example.</p>
+      </div>
+
+      <div class="essay-para">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#365314,#4D7C0F);min-width:90px;font-size:.95rem;text-align:center">Para 1<br><small style="font-size:.58rem;opacity:.85">INTRO</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#365314">General Statement + Thesis Statement</h4>
+          <ul>
+            <li><strong>General Statement:</strong> Introduce the topic and give background information. The background for a short essay will generally be one or two sentences. <em>(Draw attention to the issue)</em></li>
+            <li><strong>Thesis Statement:</strong> The most important part of the introduction. It gives the reader clear information about the content of the essay and helps them understand it more easily. <em>(Make it specific — state your position clearly)</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="essay-para">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#4D7C0F,#65A30D);min-width:90px;font-size:.95rem;text-align:center">Para 2<br><small style="font-size:.58rem;opacity:.85">POINT 1</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#365314">Topic Statement (Topic + Controlling Idea)</h4>
+          <ul>
+            <li><strong>Point 1</strong> — State your first argument clearly</li>
+            <li><strong>Explanation</strong> — Develop the point with reasoning</li>
+            <li><strong>Evidence / Example</strong> — Support with specific facts, data or examples</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="essay-para">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#65A30D,#84CC16);min-width:90px;font-size:.95rem;text-align:center">Para 3<br><small style="font-size:.58rem;opacity:.85">POINT 2</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#365314">Topic Statement (Topic + Controlling Idea)</h4>
+          <ul>
+            <li><strong>Point 2</strong> — State your second argument</li>
+            <li><strong>Explanation</strong> — Develop the point with reasoning</li>
+            <li><strong>Evidence / Example</strong> — Support with specific facts, data or examples</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="essay-para">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#84CC16,#A3E635);min-width:90px;font-size:.95rem;text-align:center">Para 4<br><small style="font-size:.58rem;opacity:.85">POINT 3</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#365314">Topic Statement (Topic + Controlling Idea)</h4>
+          <ul>
+            <li><strong>Point 3</strong> — State your third argument (this can be the counter-argument)</li>
+            <li><strong>Explanation</strong> — Develop the point</li>
+            <li><strong>Evidence / Example</strong> — Support with specific facts, data or examples</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="essay-para">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#365314,#4D7C0F);min-width:90px;font-size:.95rem;text-align:center">Conclusion<br><small style="font-size:.58rem;opacity:.85">SUMMARY</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#365314">Summary + Final Comment / Appraisal</h4>
+          <ul>
+            <li><strong>Summary</strong> — Briefly restate the main points made in the essay without introducing new points</li>
+            <li><strong>Final comment / appraisal</strong> — State your clear judgement and position</li>
+            <li style="margin-top:6px"><strong>Useful transition signals for the concluding sentence:</strong><br>
+              <span style="background:#ECFCCB;border-radius:6px;padding:4px 10px;display:inline-block;margin-top:4px;font-size:.77rem;color:#365314">In conclusion… · Thus… · In short… · In summary… · In brief… · Therefore… · These examples show that… · This evidence strongly suggests that…</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="background:#FFF7ED;border-left:4px solid var(--gold)">
+      <div class="card-title">⚡ Quick Essentials</div>
+      <ul class="topic-list">
+        <li>The most common command terms are <strong>"Discuss"</strong>, "To What Extent", Evaluate, Explain</li>
+        <li>You may or may not be given a source — be prepared for both</li>
+        <li>Always write in flowing prose — never use bullet points within your essay</li>
+        <li>Clearly separate <strong>facts</strong> from <strong>opinions</strong> throughout</li>
+        <li>Use paraphrasing, summarising skills and correct citations when referring to sources</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EXAM TIPS -->
+  <div class="section-panel" id="inthumans-tips">
+    <ul class="tips-list">
+      <li style="border-color:#84CC16"><span class="tip-icon">✍️</span><div><strong>The conclusion MUST answer the question directly.</strong> State a clear degree or position: "In conclusion…", "This evidence strongly suggests that…". Avoid vague endings.</div></li>
+      <li style="border-color:#65A30D"><span class="tip-icon">📄</span><div><strong>Always cite sources specifically.</strong> "As Source A (a 2019 newspaper article) argues…" is better than "according to the sources." Name the source, its type and date.</div></li>
+      <li style="border-color:#BEF264"><span class="tip-icon">🌍</span><div><strong>Use named case studies.</strong> "In Bangladesh, the garment industry employed 4 million workers due to globalisation" scores higher than "in some developing countries." Specific &gt; vague.</div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════ GEOGRAPHY ══════════════════════════ -->
+<div class="subject-page" id="page-geography">
+  <div class="page-hero" style="background:linear-gradient(135deg,#134E4A,#14B8A6,#99F6E4)">
+    <div class="hero-type">Individuals &amp; Societies</div>
+    <h2>Geography</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks · 80 marks</span><span class="hero-chip">Maps, data, case studies</span><span class="hero-chip">Same blueprint as I&amp;S</span></div>
+  </div>
+  <div class="section-tabs">
+    <button class="section-tab active" onclick="showSection('geography','blueprint',this)">📊 Blueprint</button>
+    <button class="section-tab" onclick="showSection('geography','topics',this)">📚 Topics</button>
+    <button class="section-tab" onclick="showSection('geography','cmdterms',this)">🔑 Command Terms</button>
+    <button class="section-tab" onclick="showSection('geography','essay',this)">📝 Discussion Essay</button>
+    <button class="section-tab" onclick="showSection('geography','tips',this)">💡 Exam Tips</button>
+  </div>
+
+  <!-- BLUEPRINT -->
+  <div class="section-panel active" id="geography-blueprint">
+    <div class="callout callout-info"><span class="callout-icon">ℹ️</span><div>Same blueprint as all I&amp;S subjects. Total = 80 marks. For the full official blueprint visit: <a href="https://sites.google.com/pathwaysschool.in/myp5-ih-geography-bykirti/e-assessment/blueprint" target="_blank" style="color:#1D4ED8;font-weight:700">Pathways School Blueprint ↗</a></div></div>
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#F0FDFA;border-color:#14B8A6"><div class="crit-label">Criterion A</div><div class="crit-name">Knowing &amp; Understanding</div><div class="crit-marks">Across all tasks</div><div class="crit-desc">Named case studies, specific data, processes and geographical terminology.</div></div>
+      <div class="criterion-card" style="background:#F0FDFA;border-color:#0D9488">
+        <div class="crit-label">Criterion B</div>
+        <div class="crit-name">Investigating</div>
+        <div class="crit-marks">20 marks · Task 1</div>
+        <div class="crit-desc">Use and analyse geographical sources (maps, graphs, statistical data, photos) as evidence. Formulate research questions and action plans.</div>
+        <div style="margin-top:10px">
+          <a href="https://sites.google.com/pathwaysschool.in/myp5-ih-geography-bykirti/e-assessment/blueprint" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:#134E4A;color:#fff;padding:6px 14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.74rem;transition:.2s">🔗 Official Blueprint ↗</a>
+        </div>
+      </div>
+      <div class="criterion-card" style="background:#F0FDFA;border-color:#99F6E4">
+        <div class="crit-label">Criterion C</div>
+        <div class="crit-name">Communicating</div>
+        <div class="crit-marks">Tasks 2 &amp; 3</div>
+        <div class="crit-desc">Present geographical arguments in a clear, appropriate format for the given audience and purpose.</div>
+        <div style="margin-top:8px;background:#CCFBF1;border-radius:6px;padding:7px 10px;font-size:.76rem;color:#134E4A"><strong>Examples:</strong> Speech, Blog, Letter, Podcast Script</div>
+      </div>
+      <div class="criterion-card" style="background:#F0FDFA;border-color:#115E59">
+        <div class="crit-label">Criterion D</div>
+        <div class="crit-name">Thinking Critically</div>
+        <div class="crit-marks">20 marks · Task 3</div>
+        <div class="crit-desc">Evaluate geographical issues from multiple perspectives. Extended writing — often "Discuss" or "To What Extent."</div>
+        <div style="margin-top:8px;background:#CCFBF1;border-radius:6px;padding:7px 10px;font-size:.76rem;color:#134E4A"><strong>Includes:</strong> Evaluate Sources (OPVL) — see Topics tab for full OPVL framework.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOPICS -->
+  <div class="section-panel" id="geography-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">🌏 Geography Syllabus Topics</div><ul class="topic-list">
+        <li>Changing population: natural increase, structure and migration</li>
+        <li>Sustainable management of urban systems and environments</li>
+        <li>Globalisation: trade, aid, exchange and flows</li>
+        <li>Impacts and management of tourism</li>
+        <li>Sustainable management of physical processes: river and coastal environments</li>
+        <li>Global climate change: causes, consequences and responses</li>
+        <li>Impacts and management of natural disasters</li>
+        <li>Impacts and management of tectonically active areas</li>
+        <li>Sustainable management of natural environments</li>
+        <li>Resource management</li>
+        <li>Application of GIS</li>
+      </ul></div>
+
+      <!-- OPVL Framework for Geography -->
+      <div class="card">
+        <div class="card-title">🔍 Source Analysis Framework — OPVL</div>
+        <div style="background:linear-gradient(135deg,#F0FDFA,#CCFBF1);border-radius:10px;padding:14px 16px;margin-bottom:14px;border-left:4px solid #14B8A6;font-size:.8rem;color:#134E4A;line-height:1.6">
+          <strong>Task:</strong> With reference to origin and purpose, analyse the value and limitation of the source for a historian/geographer studying the given topic.
+        </div>
+
+        <table class="opvl-table">
+          <thead><tr><th style="border-radius:8px 0 0 0;width:22%">Section</th><th style="width:39%">Values</th><th style="border-radius:0 8px 0 0;width:39%">Limitations</th></tr></thead>
+          <tbody>
+            <tr>
+              <td style="background:#F0FDFA">
+                <strong style="color:#0D9488">Origins</strong>
+                <div style="font-size:.74rem;color:#0F766E;margin-top:4px">When, where, and by whom it was produced?</div>
+                <div style="font-size:.72rem;color:#14B8A6;margin-top:6px;line-height:1.4">Primary or secondary source?</div>
+              </td>
+              <td style="font-size:.77rem;line-height:1.55">What are some <strong>values</strong> of the document based on its <strong>origin</strong>?<br><br><span style="color:var(--text-muted);font-size:.72rem">e.g. Created by an eyewitness / official record / close to the event in time</span></td>
+              <td style="font-size:.77rem;line-height:1.55">What are some <strong>limitations</strong> based on its <strong>origin</strong>?<br><br><span style="color:var(--text-muted);font-size:.72rem">e.g. Single perspective / created long after the event / limited access</span></td>
+            </tr>
+            <tr>
+              <td style="background:#F0FDFA">
+                <strong style="color:#0D9488">Purpose</strong>
+                <div style="font-size:.74rem;color:#0F766E;margin-top:4px">Intended audience?</div>
+                <div style="font-size:.72rem;color:#14B8A6;margin-top:6px;line-height:1.4">Fact, opinion, or propaganda?</div>
+              </td>
+              <td style="font-size:.77rem;line-height:1.55">What are some <strong>values</strong> based on its <strong>purpose</strong>?<br><br><span style="color:var(--text-muted);font-size:.72rem">e.g. Created to inform / reveals intent of the author/group</span></td>
+              <td style="font-size:.77rem;line-height:1.55">What are some <strong>limitations</strong> based on its <strong>purpose</strong>?<br><br><span style="color:var(--text-muted);font-size:.72rem">e.g. Produced for propaganda / selective / may omit opposing views</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="margin-top:14px;display:flex;flex-direction:column;gap:9px">
+          <div style="background:#EFF6FF;border-radius:8px;padding:11px 14px;font-size:.77rem;border-left:3px solid #3B82F6">
+            <div style="font-weight:800;color:#1D4ED8;margin-bottom:5px">Step 1 — Origin</div>
+            <ul style="list-style:none;color:#1E3A8A;line-height:1.65">
+              <li>→ Primary (first-hand) or secondary (interpreted) source?</li>
+              <li>→ Where and when was it created? Who is the author or organisation?</li>
+              <li>→ Are the author's credentials reliable?</li>
+            </ul>
+          </div>
+          <div style="background:#FFF7ED;border-radius:8px;padding:11px 14px;font-size:.77rem;border-left:3px solid #F59E0B">
+            <div style="font-weight:800;color:#B45309;margin-bottom:5px">Step 2 — Purpose</div>
+            <ul style="list-style:none;color:#78350F;line-height:1.65">
+              <li>→ What was the purpose? Fact, fiction, opinion or propaganda?</li>
+              <li>→ Who is the intended audience? Objective or impartial?</li>
+              <li>→ What does it say — and what can it tell you beyond the surface?</li>
+            </ul>
+          </div>
+          <div style="background:#F0FDF4;border-radius:8px;padding:11px 14px;font-size:.77rem;border-left:3px solid #22C55E">
+            <div style="font-weight:800;color:#15803D;margin-bottom:5px">Step 3 — Value</div>
+            <ul style="list-style:none;color:#166534;line-height:1.65">
+              <li>→ How has the source helped your research? What questions has it answered?</li>
+              <li>→ Can the information be verified through another source (corroboration)?</li>
+            </ul>
+          </div>
+          <div style="background:#FEF2F2;border-radius:8px;padding:11px 14px;font-size:.77rem;border-left:3px solid #EF4444">
+            <div style="font-weight:800;color:#991B1B;margin-bottom:5px">Step 4 — Limitations</div>
+            <ul style="list-style:none;color:#7F1D1D;line-height:1.65">
+              <li>→ At what point does this source <strong>stop being of value</strong>?</li>
+              <li>→ What part of the story can we NOT tell from this document?</li>
+              <li>→ <strong>Bias alone does not limit value</strong> — specify who it is biased towards/against and what is MISSING.</li>
+              <li>→ Does it inaccurately reflect the time period?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card"><div class="card-title">🗺️ Key Geographical Skills</div><ul class="topic-list">
+        <li>Reading and interpreting population pyramids</li>
+        <li>Describing patterns from maps using compass directions and place names</li>
+        <li>Interpreting climate graphs (temperature + precipitation)</li>
+        <li>Calculating rates of change from data tables</li>
+        <li>Drawing and annotating sketch maps</li>
+        <li>Interpreting Sankey diagrams and flow maps</li>
+        <li>OPVL source analysis for geographical sources</li>
+        <li>Using specific named case studies (country + date + data)</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <!-- COMMAND TERMS -->
+  <div class="section-panel" id="geography-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>Definition</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>State / Identify</strong></td><td>Name or locate a specific geographical feature, trend or data point.</td><td><span class="level-pill l1">Basic</span></td></tr>
+      <tr><td><strong>Describe</strong></td><td>Detailed account of patterns, trends or processes using data and map evidence.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Explain / Suggest</strong></td><td>Geographical reasons with cause and effect / propose a possible answer.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Analyse / Evaluate</strong></td><td>Break down to essential elements / appraise strengths and limitations.</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Discuss / To what extent</strong></td><td>Balanced review of arguments / consider merits of an argument with clear conclusion.</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+
+  <!-- DISCUSSION ESSAY — Geography (same structure, teal styling) -->
+  <div class="section-panel" id="geography-essay">
+    <div class="callout callout-warn"><span class="callout-icon">📌</span><div>Geography's Thinking Critically task (36 marks) uses the same discussion essay structure. Use named places, specific data and geographical terminology throughout.</div></div>
+
+    <div style="background:linear-gradient(135deg,#F0FDFA,#CCFBF1);border-radius:12px;padding:20px 24px;margin-bottom:18px;border-left:5px solid #14B8A6">
+      <div style="font-size:.73rem;font-weight:800;color:#134E4A;text-transform:uppercase;letter-spacing:.09em;margin-bottom:10px">📖 What is a Discussion Essay?</div>
+      <div style="font-size:.84rem;color:#0F766E;line-height:1.7">
+        Many essay titles require you to examine <strong>both sides</strong> of a situation and to conclude by saying which side you favour. These are known as <strong>discussion</strong> or <em>for and against</em> essays. A <strong>balanced view</strong> is normally essential. This makes discussion essays distinct from persuasion essays, for which only one side is given. Facts and opinions must be clearly separated throughout.
+      </div>
+    </div>
+
+    <div class="essay-guide" style="border-color:#99F6E4">
+      <div class="essay-guide-header" style="background:linear-gradient(135deg,#134E4A,#14B8A6)">
+        <h3>Geography Discussion Essay — Structure Guide</h3>
+        <p>Use named places, specific data and geographical terminology throughout.</p>
+      </div>
+
+      <div class="essay-para" style="border-bottom-color:#99F6E4">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#134E4A,#0F766E);min-width:90px;font-size:.95rem;text-align:center">Para 1<br><small style="font-size:.58rem;opacity:.85">INTRO</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#134E4A">General Statement + Thesis Statement</h4>
+          <ul>
+            <li><strong>General Statement:</strong> Introduce the geographical topic and give background context (1–2 sentences). <em>(Draw attention)</em></li>
+            <li><strong>Thesis Statement:</strong> State your clear position. <em>(Make it specific — this guides the whole essay)</em></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="essay-para" style="border-bottom-color:#99F6E4">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#0F766E,#0D9488);min-width:90px;font-size:.95rem;text-align:center">Para 2<br><small style="font-size:.58rem;opacity:.85">POINT 1</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#134E4A">Topic Statement (Topic + Controlling Idea)</h4>
+          <ul>
+            <li><strong>Point 1</strong> — State your first geographical argument</li>
+            <li><strong>Explanation</strong> — Develop with geographical reasoning</li>
+            <li><strong>Evidence / Example</strong> — Named place, country, date and specific data</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="essay-para" style="border-bottom-color:#99F6E4">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#0D9488,#14B8A6);min-width:90px;font-size:.95rem;text-align:center">Para 3<br><small style="font-size:.58rem;opacity:.85">POINT 2</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#134E4A">Topic Statement (Topic + Controlling Idea)</h4>
+          <ul>
+            <li><strong>Point 2</strong> — State your second geographical argument</li>
+            <li><strong>Explanation</strong> — Develop with geographical reasoning</li>
+            <li><strong>Evidence / Example</strong> — Named place, country, date and specific data</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="essay-para" style="border-bottom-color:#99F6E4">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#14B8A6,#2DD4BF);min-width:90px;font-size:.95rem;text-align:center">Para 4<br><small style="font-size:.58rem;opacity:.85">POINT 3</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#134E4A">Topic Statement (Topic + Controlling Idea)</h4>
+          <ul>
+            <li><strong>Point 3</strong> — State your third argument (consider scale: local/national/global, or stakeholders)</li>
+            <li><strong>Explanation</strong> — Develop with geographical reasoning</li>
+            <li><strong>Evidence / Example</strong> — Named case study with specific data</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="essay-para">
+        <div class="essay-para-num" style="background:linear-gradient(135deg,#134E4A,#0F766E);min-width:90px;font-size:.95rem;text-align:center">Conclusion<br><small style="font-size:.58rem;opacity:.85">SUMMARY</small></div>
+        <div class="essay-para-content">
+          <h4 style="color:#134E4A">Summary + Final Comment / Appraisal</h4>
+          <ul>
+            <li><strong>Summary</strong> — Briefly restate the main points without introducing new ones</li>
+            <li><strong>Final comment / appraisal</strong> — State a clear, measured judgement</li>
+            <li style="margin-top:6px"><strong>Useful transition signals:</strong><br>
+              <span style="background:#CCFBF1;border-radius:6px;padding:4px 10px;display:inline-block;margin-top:4px;font-size:.77rem;color:#134E4A">In conclusion… · Thus… · In short… · In summary… · In brief… · Therefore… · These examples show that… · This evidence strongly suggests that…</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="background:#F0FDFA;border-left:4px solid #14B8A6">
+      <div class="card-title">⚡ Quick Essentials</div>
+      <ul class="topic-list">
+        <li>Always write in flowing geographical prose — never use bullet points within the essay</li>
+        <li>Clearly separate <strong>facts</strong> from <strong>opinions</strong></li>
+        <li>Use paraphrasing, summarising and correct citations when referring to sources</li>
+        <li>Name real places, include statistics and dates — specific beats vague</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- EXAM TIPS -->
+  <div class="section-panel" id="geography-tips">
+    <ul class="tips-list">
+      <li style="border-color:#14B8A6"><span class="tip-icon">📊</span><div><strong>Always quote specific data when describing graphs/maps.</strong> "The population density of region A is approximately 450 people per km²" scores marks that "region A is densely populated" does not.</div></li>
+      <li style="border-color:#0D9488"><span class="tip-icon">🗺️</span><div><strong>Name real case studies with dates and data.</strong> Mumbai for urbanisation. The Maldives for climate change. Nepal 2015 for earthquakes.</div></li>
+      <li style="border-color:#115E59"><span class="tip-icon">🌍</span><div><strong>For tectonic/natural disaster questions:</strong> Name the type of plate boundary, the specific process and the consequence. Multi-cause, multi-consequence answers reach higher bands.</div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════ HISTORY ══════════════════════════ -->
+<div class="subject-page" id="page-history">
+  <div class="page-hero" style="background:linear-gradient(135deg,#2E1065,#7C3AED,#A78BFA)">
+    <div class="hero-type">Individuals &amp; Societies</div>
+    <h2>History</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 3 Tasks · 80 marks</span><span class="hero-chip">Source analysis + Extended writing</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('history','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('history','topics',this)">📚 Topics</button><button class="section-tab" onclick="showSection('history','cmdterms',this)">🔑 Command Terms</button><button class="section-tab" onclick="showSection('history','24mark',this)">📝 Essay Guide</button><button class="section-tab" onclick="showSection('history','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="history-blueprint">
+    <div class="criteria-grid">
+      <div class="criterion-card" style="background:#FAF5FF;border-color:#A78BFA"><div class="crit-label">Criterion A</div><div class="crit-name">Knowing &amp; Understanding</div><div class="crit-marks">Across all tasks</div><div class="crit-desc">Historical knowledge: facts, causation, consequence, change and continuity.</div></div>
+      <div class="criterion-card" style="background:#FAF5FF;border-color:#7C3AED"><div class="crit-label">Criterion B</div><div class="crit-name">Investigating</div><div class="crit-marks">20 marks · Task 1</div><div class="crit-desc">Select and evaluate primary/secondary historical sources using OPVL. Formulate research questions.</div></div>
+      <div class="criterion-card" style="background:#FAF5FF;border-color:#6D28D9"><div class="crit-label">Criterion C</div><div class="crit-name">Communicating</div><div class="crit-marks">Tasks 2 &amp; 3</div><div class="crit-desc">Write historically in clear, coherent, structured prose using appropriate vocabulary.</div></div>
+      <div class="criterion-card" style="background:#FAF5FF;border-color:#4C1D95"><div class="crit-label">Criterion D</div><div class="crit-name">Thinking Critically</div><div class="crit-marks">20 marks · Task 3</div><div class="crit-desc">Assess significance; analyse multiple perspectives; construct justified historical argument.</div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="history-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">📜 Syllabus Topics</div><ul class="topic-list">
+        <li>How revolutionary was the Industrial Revolution?</li>
+        <li>Does trade and exchange promote cooperation or exploitation?</li>
+        <li>How have ideas reflected change in the last 200 years?</li>
+        <li>Why do nations build empires?</li>
+        <li>Why do nations go to war and why is peacemaking difficult?</li>
+        <li>Why have nationalist movements been successful?</li>
+        <li>How have civil rights and social protest groups brought about change?</li>
+        <li>Can individuals make a difference in shaping the world?</li>
+      </ul></div>
+      <div class="card"><div class="card-title">🔍 Historical Skills</div><ul class="topic-list">
+        <li>OPVL source analysis</li>
+        <li>Causation: short-term vs long-term</li>
+        <li>Consequence: immediate vs long-term</li>
+        <li>Change and continuity; historical significance</li>
+        <li>Perspective and historical empathy</li>
+        <li>Primary vs secondary sources</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="section-panel" id="history-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>Definition</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>Identify / Describe</strong></td><td>State a fact / Detailed account using evidence.</td><td><span class="level-pill l1">Basic</span></td></tr>
+      <tr><td><strong>Explain</strong></td><td>Historical reasons; show how and why something happened.</td><td><span class="level-pill l2">Mid</span></td></tr>
+      <tr><td><strong>Analyse / Evaluate / Discuss / To what extent</strong></td><td>Break down causation / appraise importance / balanced review / consider merits with conclusion.</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="section-panel" id="history-24mark">
+    <div class="essay-guide">
+      <div class="essay-guide-header"><h3>History — Extended Essay Guide ("To What Extent" / "Assess the Significance")</h3><p>Write in flowing historical prose. Every claim needs specific historical evidence.</p></div>
+      <div class="essay-para"><div class="essay-para-num">Para 1</div><div class="essay-para-content"><h4>Introduction with Thesis</h4><ul><li>Define key terms; place the question in historical context</li><li>State your thesis clearly</li></ul></div></div>
+      <div class="essay-para"><div class="essay-para-num">Paras 2–3</div><div class="essay-para-content"><h4>Arguments FOR and AGAINST</h4><ul><li>At least 3 detailed arguments each side with specific dates, events, evidence</li><li>Use historical connectives: "By contrast…", "Despite this…", "However…"</li></ul></div></div>
+      <div class="essay-para"><div class="essay-para-num">Para 4</div><div class="essay-para-content"><h4>Historiography / Stakeholder Perspective</h4><ul><li>Different historians' interpretations OR stakeholder perspectives</li></ul></div></div>
+      <div class="essay-para"><div class="essay-para-num">Para 5</div><div class="essay-para-content"><h4>Conclusion</h4><ul><li>Summarise the balance of evidence; give a clear degree of judgement</li></ul></div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="history-tips">
+    <ul class="tips-list">
+      <li style="border-color:#A78BFA"><span class="tip-icon">📅</span><div><strong>Chronology matters.</strong> Situate events with specific dates.</div></li>
+      <li style="border-color:#7C3AED"><span class="tip-icon">📄</span><div><strong>Bias = Value, not just a limitation.</strong> A biased source shows how that group thought and what they wanted to achieve — that IS useful evidence for historians.</div></li>
+      <li style="border-color:#4C1D95"><span class="tip-icon">⚖️</span><div><strong>Introduction must state your thesis</strong> — argue a position, don't just describe.</div></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══════════════════════════ IDU ══════════════════════════ -->
+<div class="subject-page" id="page-idu">
+  <div class="page-hero" style="background:linear-gradient(135deg,#1E1B4B,#4F46E5,#818CF8)">
+    <div class="hero-type">Interdisciplinary Unit</div>
+    <h2>Interdisciplinary Unit (IDU)</h2>
+    <div class="hero-meta"><span class="hero-chip">📋 1 Paper · ~90 min</span><span class="hero-chip">🔗 Pre-release material provided</span><span class="hero-chip">Crit A · B · C</span></div>
+  </div>
+  <div class="section-tabs"><button class="section-tab active" onclick="showSection('idu','blueprint',this)">📊 Blueprint</button><button class="section-tab" onclick="showSection('idu','topics',this)">📚 Structure</button><button class="section-tab" onclick="showSection('idu','cmdterms',this)">🔑 Command Terms</button><button class="section-tab" onclick="showSection('idu','tips',this)">💡 Exam Tips</button></div>
+  <div class="section-panel active" id="idu-blueprint">
+    <div class="idu-link-card"><div class="idu-icon">🔗</div><div><h3>Pre-Release Material — IDU</h3><p>Review and annotate this thoroughly before the examination.</p><a href="https://idprm.ibo.org/index.html#/English" target="_blank">Open Pre-Release Material ↗</a></div></div>
+    <a href="https://docs.google.com/presentation/d/1PM_V7rFBGRs6hH4CEFi9bYzPCpcXx7zR/edit?usp=sharing&ouid=114223830781089643670&rtpof=true&sd=true" target="_blank" style="text-decoration:none;display:block;margin-bottom:18px">
+      <div style="background:linear-gradient(135deg,#312E81,#4F46E5,#818CF8);border-radius:var(--radius);padding:22px 28px;display:flex;align-items:center;gap:20px;border:2px solid #A5B4FC;box-shadow:0 4px 24px rgba(79,70,229,.25)">
+        <div style="font-size:2.5rem;flex-shrink:0">📊</div>
+        <div style="flex:1">
+          <div style="font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#C7D2FE;margin-bottom:5px">⭐ Must-Read Student Resource</div>
+          <div style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:#fff;margin-bottom:5px">IDU Student Presentation — May 2026</div>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:#fff;color:#312E81;padding:9px 20px;border-radius:8px;font-weight:800;font-size:.83rem">📊 Open Student Presentation (Google Slides) ↗</div>
+        </div>
+      </div>
+    </a>
+    <div class="criteria-grid" style="grid-template-columns:1fr 1fr 1fr">
+      <div class="criterion-card" style="background:#EEF2FF;border-color:#6366F1"><div class="crit-label">Criterion A</div><div class="crit-name">Evaluating</div><div class="crit-marks">Analysing disciplinary perspectives</div><div class="crit-desc">Analyse and evaluate knowledge from EACH of the two disciplines. Identify the strengths and limitations of each disciplinary lens.</div></div>
+      <div class="criterion-card" style="background:#EEF2FF;border-color:#4F46E5"><div class="crit-label">Criterion B</div><div class="crit-name">Synthesising</div><div class="crit-marks">Creating new understanding</div><div class="crit-desc">Combine knowledge from both disciplines to create something new that neither discipline alone could produce.</div></div>
+      <div class="criterion-card" style="background:#EEF2FF;border-color:#818CF8"><div class="crit-label">Criterion C</div><div class="crit-name">Reflecting</div><div class="crit-marks">Evaluating their own learning</div><div class="crit-desc">Evaluate your own learning process. What did the interdisciplinary approach reveal? Genuine metacognition — not a summary of content.</div></div>
+    </div>
+  </div>
+  <div class="section-panel" id="idu-topics">
+    <div class="grid-2">
+      <div class="card"><div class="card-title">🔗 What Makes a Strong IDU Response?</div><ul class="topic-list">
+        <li>Name BOTH disciplines early in your response</li>
+        <li>Show disciplinary knowledge from EACH</li>
+        <li>Synthesis: show HOW the two connect — not just "both relate to…"</li>
+        <li>Use the pre-release material as your evidential foundation</li>
+        <li>Criterion C: reflect on what changed in your thinking, not a summary</li>
+      </ul></div>
+      <div class="card"><div class="card-title">🌉 Synthesis Language Starters</div><ul class="topic-list">
+        <li>"Both disciplines reveal that…"</li>
+        <li>"While [D1] explains the mechanism, [D2] shows the human consequence…"</li>
+        <li>"The intersection of [D1] and [D2] enables us to understand… which neither alone could show"</li>
+        <li>"Looking at this through both lenses, we can conclude that…"</li>
+      </ul></div>
+    </div>
+    <div style="background:linear-gradient(135deg,#1E1B4B,#312E81);border-radius:12px;padding:22px 26px;margin-top:14px;color:#fff">
+      <div style="font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#A5B4FC;margin-bottom:8px">🔬 May 2026 — Statement of Inquiry</div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;margin-bottom:8px">Sciences + Individuals &amp; Societies · Global Context: Identities and Relationships</div>
+      <div style="background:rgba(255,255,255,.1);border-radius:8px;padding:12px 16px;font-size:.85rem;color:#E0E7FF;font-style:italic">"Identity formation is a consequence of the interactions between our genetics and our environment."</div>
+    </div>
+  </div>
+  <div class="section-panel" id="idu-cmdterms">
+    <div class="card"><table class="ct-table"><thead><tr><th>Command Term</th><th>Definition</th><th>Level</th></tr></thead><tbody>
+      <tr><td><strong>Identify / Describe / Explain</strong></td><td>Name / Detailed account / Account with reasons.</td><td><span class="level-pill l1">Basic</span></td></tr>
+      <tr><td><strong>Synthesise</strong></td><td>Combine knowledge from both disciplines to develop an integrated insight that neither could produce alone. (Criterion B)</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Evaluate</strong></td><td>Appraise the strengths and limitations of each disciplinary perspective. (Criterion A)</td><td><span class="level-pill l3">Higher</span></td></tr>
+      <tr><td><strong>Reflect</strong></td><td>Think deeply about your own learning: what changed, what were the limitations? (Criterion C)</td><td><span class="level-pill l3">Higher</span></td></tr>
+    </tbody></table></div>
+  </div>
+  <div class="section-panel" id="idu-tips">
+    <ul class="tips-list">
+      <li style="border-color:#6366F1"><span class="tip-icon">🔗</span><div><strong>Synthesis ≠ two separate paragraphs.</strong> You must show explicitly how insight from one discipline transforms or deepens the other.</div></li>
+      <li style="border-color:#4F46E5"><span class="tip-icon">📚</span><div><strong>Annotate and use the pre-release material.</strong> You are allowed to access it in the exam.</div></li>
+      <li style="border-color:#818CF8"><span class="tip-icon">🪞</span><div><strong>Criterion C is metacognition, not summary.</strong> The examiner wants to see how studying it changed your thinking.</div></li>
+    </ul>
+  </div>
+</div>
+
+</main>
+</div>
+
+<script>
+let toastTimer=null;
+function showSubject(id,btn){
+  document.querySelectorAll('.subject-page').forEach(p=>p.classList.remove('active'));
+  const page=document.getElementById('page-'+id);
+  if(page)page.classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  document.getElementById('mainContent').scrollTop=0;
+  const toast=document.getElementById('scrollToast');
+  toast.classList.add('show');
+  if(toastTimer)clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>toast.classList.remove('show'),2800);
+}
+function showSection(subjectId,sectionId,btn){
+  const page=document.getElementById('page-'+subjectId);
+  if(!page)return;
+  page.querySelectorAll('.section-panel').forEach(p=>p.classList.remove('active'));
+  const panel=document.getElementById(subjectId+'-'+sectionId);
+  if(panel)panel.classList.add('active');
+  if(btn){
+    const tabs=btn.closest('.section-tabs');
+    if(tabs)tabs.querySelectorAll('.section-tab').forEach(t=>t.classList.remove('active'));
+    btn.classList.add('active');
+  }
+}
+document.addEventListener('click',function(e){
+  if(!e.target.classList.contains('toggle-answer'))return;
+  const btn=e.target;
+  const ansDiv=btn.previousElementSibling;
+  if(!ansDiv||!ansDiv.classList.contains('q-answer'))return;
+  if(ansDiv.style.display==='block'){ansDiv.style.display='none';btn.textContent=btn.textContent.replace('▲','▼').replace('Hide','Show');}
+  else{ansDiv.style.display='block';btn.textContent=btn.textContent.replace('▼','▲').replace('Show','Hide');}
+});
+</script>
+</body>
+</html>
